@@ -20,12 +20,6 @@ econ () {
 
 cs () {
     cd /Users/matthewberthoud/Documents/CSCI_$1/
-    if [ "$1" = "416" ] && [ "$2" = "-j" ]; then
-        jupyter-notebook
-    fi
-    if [ "$1" = "415" ] && [ "$2" = "-r" ]; then
-        cd rust
-    fi
 }
 
 notes () {
@@ -61,9 +55,7 @@ alias t=tmux
 alias g=git
 alias gs="git status"
 alias ga="git add"
-alias gc="git commit"
-alias push="git push"
-alias pull="git pull"
+alias gc="git commit -m"
 alias lg="lazygit"
 
 clear
