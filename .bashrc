@@ -19,7 +19,7 @@ econ () {
 }
 
 cs () {
-    cd /Users/matthewberthoud/Documents/CSCI_$1/
+    cd ~/Documents/CSCI_$1/
 }
 
 notes () {
@@ -41,7 +41,7 @@ lazygit () {
 alias re="source ~/.bashrc"
 
 alias dt="cd ~/Desktop"
-alias sb="second_brain"
+alias sb="cd ~/Desktop/second_brain"
 alias dl="cd ~/Downloads"
 alias dc="cd ~/Documents"
 alias ..="cd .."
@@ -57,5 +57,3 @@ alias gs="git status"
 alias ga="git add"
 alias gc="git commit -m"
 alias lg="lazygit"
-
-clear

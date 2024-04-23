@@ -28,7 +28,8 @@ export PATH="$PATH:/Users/matthewberthoud/Library/Application Support/JetBrains/
 # remove warning about default shell being zsh
 export BASH_SILENCE_DEPRECATION_WARNING=1
 
-# remove "Last login" thing
-export HISTTIMEFORMAT=""
-
+# Run this on startup obviously
 source ~/.bashrc
+
+# remove "Last login" thing
+clear
