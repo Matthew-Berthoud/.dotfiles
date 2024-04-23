@@ -38,22 +38,25 @@ lazygit () {
 }
 
 
-alias re="source ~/.bashrc"
-
 alias dt="cd ~/Desktop"
 alias sb="cd ~/Desktop/second_brain"
 alias dl="cd ~/Downloads"
 alias dc="cd ~/Documents"
 alias ..="cd .."
 
-alias ls='ls --color=auto'
-alias ll='ls -la'
-alias la='ls -lathr'
+alias ls="ls --color=auto"
+alias ll="ls -la"
+alias la="ls -lathr"
+alias lg="la | grep"
 
-alias v=vim
 alias t=tmux
+alias v=vim
+alias vr="v ~/.vimrc"
+alias br="v ~/.bashrc"
+alias bp="v ~/.bash_profile"
+alias re="source ~/.bash_profile"
+
 alias g=git
 alias gs="git status"
 alias ga="git add"
 alias gc="git commit -m"
-alias lg="lazygit"
