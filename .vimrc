@@ -38,12 +38,12 @@ set smarttab
 inoremap {<CR> {<CR>}<Esc>O
 
 
-nnoremap <C-J> <C-w><C-J>
-nnoremap <C-K> <C-w><C-H>
-nnoremap <C-L> <C-w><C-L>
-nnoremap <C-H> <C-w><C-H>
-
-nnoremap <C-j> <C-w><C-j>
-nnoremap <C-k> <C-w><C-k>
-nnoremap <C-l> <C-w><C-l>
-nnoremap <C-h> <C-w><C-h>
+" nnoremap <C-J> <C-w><C-J>
+" nnoremap <C-K> <C-w><C-H>
+" nnoremap <C-L> <C-w><C-L>
+" nnoremap <C-H> <C-w><C-H>
+" 
+" nnoremap <C-j> <C-w><C-j>
+" nnoremap <C-k> <C-w><C-k>
+" nnoremap <C-l> <C-w><C-l>
+" nnoremap <C-h> <C-w><C-h>

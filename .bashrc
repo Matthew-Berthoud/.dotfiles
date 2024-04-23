@@ -1,4 +1,3 @@
-# bash_profile runs on login, bashrc runs when shell opened? 
 PS1="(\W) "
 
 sshlab () {
@@ -30,14 +29,7 @@ notes () {
     fi
 }
 
-lazygit () {
-    git pull
-    git add *
-    git commit -m $1
-    git push
-}
-
-
+alias dot="cd ~/dotfiles"
 alias dt="cd ~/Desktop"
 alias sb="cd ~/Desktop/second_brain"
 alias dl="cd ~/Downloads"
