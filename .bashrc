@@ -35,6 +35,13 @@ docs () {
     esac
 }
 
+lazygit() {
+    g pull
+    ga "$@"
+    gc "lazy"
+    g push
+}
+
 alias ch="open -a Google\ Chrome"
 
 alias dot="cd ~/dotfiles"
@@ -54,9 +61,10 @@ alias v=vim
 alias vr="v ~/.vimrc"
 alias br="v ~/.bashrc"
 alias bp="v ~/.bash_profile"
-alias re="source ~/.bash_profile"
+alias re="source ~/.bashrc"
 
 alias g=git
 alias gs="git status"
 alias ga="git add"
 alias gc="git commit -m"
+alias lazy="lazygit"
