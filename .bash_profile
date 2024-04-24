@@ -30,6 +30,3 @@ export BASH_SILENCE_DEPRECATION_WARNING=1
 
 # Run this on startup obviously
 source ~/.bashrc
-
-# remove "Last login" thing
-clear
