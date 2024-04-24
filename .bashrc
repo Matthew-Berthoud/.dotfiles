@@ -28,6 +28,15 @@ notes () {
     fi
 }
 
+docs () {
+    case $1 in
+        sh | bash) ch https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html;;
+        *) echo No documentation linked for $1;;
+    esac
+}
+
+alias ch="open -a Google\ Chrome"
+
 alias dot="cd ~/dotfiles"
 alias dt="cd ~/Desktop"
 alias sb="cd ~/Desktop/second_brain"
