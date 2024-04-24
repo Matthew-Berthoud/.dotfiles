@@ -1,3 +1,18 @@
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/matthewberthoud/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/matthewberthoud/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/matthewberthoud/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/matthewberthoud/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
 PS1="(\W) "
 
 # Use this to randomly select a machine, hopefully a fast one
@@ -81,7 +96,9 @@ alias bp="v ~/.bash_profile"
 alias re="source ~/.bashrc"
 
 alias g=git
+alias gl="git pull"
 alias gs="git status"
-alias ga="git add"
+alias ga="git add ."
 alias gc="git commit -m"
+alias gp="git push"
 alias lazy="lazygit"
