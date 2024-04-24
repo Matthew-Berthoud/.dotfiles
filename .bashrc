@@ -42,6 +42,23 @@ lazygit() {
     g push
 }
 
+# personalized help function that shows my notes
+h() {
+    case $1 in
+        git | g) case $2 in 
+            branch) 
+                echo "New branch:    g checkout -b <name>"
+                echo "               g branch <name> (doesn't switch to it)"
+                echo "First push:    g push -u origin"
+            ;;
+            *)  echo "Specify an option: branch, etc.";;
+        esac ;;
+        *) echo No helpdoc written for $1;;
+    esac
+
+}
+
+
 alias ch="open -a Google\ Chrome"
 
 alias dot="cd ~/dotfiles"
