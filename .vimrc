@@ -15,6 +15,9 @@ set noignorecase
 " Enable searching as you type, rather than waiting till you press enter.
 set incsearch
 
+" Status bar enabled, even with one window open
+set laststatus=2
+
 " Normal mode reminders to use correct motions
 nnoremap <Left>  :echoe "Use h"<CR>
 nnoremap <Right> :echoe "Use l"<CR>
