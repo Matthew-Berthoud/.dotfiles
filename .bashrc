@@ -1,17 +1,10 @@
 PS1="(\W) "
 
+# Use this to randomly select a machine, hopefully a fast one
+# For all other ssh stuff use Host names in .ssh/config
 sshlab () {
     ssh mwberthoud@th121-$((1 + RANDOM % 24)).cs.wm.edu
 }
-
-scplab () {
-    scp $1 mwberthoud@th121-3.cs.wm.edu:/home/mwberthoud/
-}
-
-scpfromlab() {
-    scp mwberthoud@th121-3.cs.wm.edu:/home/mwberthoud/$1 ./
-}
-
 
 econ () {
     cd /Users/matthewberthoud/Documents/ECON_$1/
@@ -26,6 +19,12 @@ notes () {
         econ $1
     else
         cs $1
+    fi
+    if [ -d "notes" ]; then
+        cd notes
+    fi
+    if [ -f "notes.md" ]; then
+        v notes.md
     fi
 }
 
