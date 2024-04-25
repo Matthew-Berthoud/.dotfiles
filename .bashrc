@@ -15,6 +15,35 @@ unset __conda_setup
 
 PS1="(\W) "
 
+# Most of my aliases (more at bottom)
+alias ch="open -a Google\ Chrome"
+
+alias dot="cd ~/dotfiles"
+alias dt="cd ~/Desktop"
+alias sb="cd ~/Desktop/second_brain"
+alias dl="cd ~/Downloads"
+alias dc="cd ~/Documents"
+alias ..="cd .."
+
+alias ls="ls --color=auto"
+alias ll="ls -la"
+alias la="ls -lathr"
+alias lg="la | grep"
+
+alias t=tmux
+alias v=vim
+alias vr="v ~/.vimrc"
+alias br="v ~/.bashrc"
+alias bp="v ~/.bash_profile"
+alias re="source ~/.bashrc"
+
+alias g=git
+alias gl="git pull"
+alias gs="git status"
+alias ga="git add ."
+alias gc="git commit -m"
+alias gp="git push"
+
 # Use this to randomly select a machine, hopefully a fast one
 # For all other ssh stuff use Host names in .ssh/config
 sshlab () {
@@ -73,32 +102,5 @@ h() {
 
 }
 
-
-alias ch="open -a Google\ Chrome"
-
-alias dot="cd ~/dotfiles"
-alias dt="cd ~/Desktop"
-alias sb="cd ~/Desktop/second_brain"
-alias dl="cd ~/Downloads"
-alias dc="cd ~/Documents"
-alias ..="cd .."
-
-alias ls="ls --color=auto"
-alias ll="ls -la"
-alias la="ls -lathr"
-alias lg="la | grep"
-
-alias t=tmux
-alias v=vim
-alias vr="v ~/.vimrc"
-alias br="v ~/.bashrc"
-alias bp="v ~/.bash_profile"
-alias re="source ~/.bashrc"
-
-alias g=git
-alias gl="git pull"
-alias gs="git status"
-alias ga="git add ."
-alias gc="git commit -m"
-alias gp="git push"
+# Aliases for functions defined above
 alias lazy="lazygit"
