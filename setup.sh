@@ -14,7 +14,6 @@ ln -s ~/dotfiles/.vim/colors ~/.vim/colors
 if [ "$(uname -s)" = "Darwin" ]; then
     echo "linking alacritty config"
     rm ~/.config/alacritty/alacritty.toml
-    rm ~/.config/alacritty/.alacritty.toml
     ln -s ~/dotfiles/alacritty.toml ~/.config/alacritty/alacritty.toml
 fi
     
