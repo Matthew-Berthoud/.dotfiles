@@ -17,8 +17,10 @@ if [ "$os_name" = "Darwin" ]; then
     unset __conda_setup
     # <<< conda initialize <<<
 
+    PS1="(\W) "
 else
     # lab machines
+    echo ".bashrc running on lab machine"
 
     # >>> conda initialize >>>
     # !! Contents within this block are managed by 'conda init' !!
@@ -38,11 +40,10 @@ else
     export PATH="/home/bren/Software/sim/misc/yas:$PATH"
     export PATH="/home/bren/Software/sim/misc/yis:$PATH"
 
+    PS1="Lab(\W) "
 fi
 
 
-
-PS1="(\W) "
 
 # Most of my aliases (more at bottom)
 alias ch="open -a Google\ Chrome"
@@ -59,7 +60,6 @@ alias ll="ls -la"
 alias la="ls -lathr"
 alias lg="la | grep"
 
-alias tmux="tmux -2"
 alias t=tmux
 alias v=vim
 alias vr="v ~/.vimrc"
@@ -84,12 +84,15 @@ econ () {
     cd /Users/matthewberthoud/Documents/ECON_$1/
 }
 
-cshw () {
-    cd ~/cs/$1/hw/$2/
+cs () {
+    cd ~/cs/$1
 }
 
-cs () {
-    cd ~/Documents/CSCI_$1/
+hw () {
+    cd ~/cs/$1/hw/$2/
+    if [ -d "repo" ]; then
+        cd repo
+    fi
 }
 
 notes () {
