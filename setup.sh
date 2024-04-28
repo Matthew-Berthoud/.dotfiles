@@ -1,7 +1,5 @@
 
-rm ~/.bash_profile rm ~/.bashrc
-rm ~/.vimrc
-rm ~/.tmux.conf
+rm ~/.bash_profile ~/.bashrc ~/.vimrc ~/.tmux.conf
 
 echo "linking non-OS-specific configs"
 
