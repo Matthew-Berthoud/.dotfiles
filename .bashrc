@@ -17,6 +17,7 @@ if [ "$os_name" = "Darwin" ]; then
     unset __conda_setup
     # <<< conda initialize <<<
 
+    # no hostname on local machine, just current dir
     PS1="(\W) "
 else
     # lab machines
@@ -40,6 +41,7 @@ else
     export PATH="/home/bren/Software/sim/misc/yas:$PATH"
     export PATH="/home/bren/Software/sim/misc/yis:$PATH"
 
+    # show hostname when on linux machines
     PS1="\h(\W) "
 fi
 
@@ -81,10 +83,12 @@ sshlab () {
 
 econ () {
     cd /Users/matthewberthoud/Documents/ECON_$1/
+    pwd
 }
 
 cs () {
     cd ~/cs/$1
+    pwd
 }
 
 hw () {
@@ -92,6 +96,7 @@ hw () {
     if [ -d "repo" ]; then
         cd repo
     fi
+    pwd
 }
 
 notes () {
@@ -102,6 +107,7 @@ notes () {
     fi
     if [ -d "notes" ]; then
         cd notes
+        pwd
     fi
     if [ -f "notes.md" ]; then
         v notes.md
