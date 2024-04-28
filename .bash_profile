@@ -1,6 +1,8 @@
 # bash_profile runs on login, bashrc runs when shell opened
+os_name=$(uname -s)
+
 if [ "$os_name" = "Darwin" ]; then
-    echo "This computer is my Mac."
+    echo ".bash_profile running on Mac."
 
     # >>> conda initialize >>>
     # !! Contents within this block are managed by 'conda init' !!
@@ -31,7 +33,7 @@ if [ "$os_name" = "Darwin" ]; then
     export BASH_SILENCE_DEPRECATION_WARNING=1
 
 else
-    echo "This computer is a lab machine"
+    echo ".bash_profile running on lab machine"
     export PATH="$PATH:/home/bren/Software/sim/misc/yas"
     export PATH="$PATH:/home/bren/Software/sim/misc/yis"
     export PATH="$PATH:/home/bren/Software/sim/misc"

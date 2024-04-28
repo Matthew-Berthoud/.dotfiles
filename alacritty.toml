@@ -1,0 +1,13 @@
+import = ["~/.config/alacritty/themes/themes/catppuccin_frappe.toml"]
+
+
+[font]
+size = 18
+
+[window]
+startup_mode = "Maximized"
+decorations = "none"
+
+[window.padding]
+x = 0
+y = 0

@@ -1,7 +1,7 @@
+os_name=$(uname -s)
 if [ "$os_name" = "Darwin" ]; then
+    echo ".bashrc running on Mac"
 
-    # Mac
-    
     # >>> conda initialize >>>
     # !! Contents within this block are managed by 'conda init' !!
     __conda_setup="$('/Users/matthewberthoud/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
