@@ -56,8 +56,7 @@ alias dc="cd ~/Documents"
 alias ..="cd .."
 
 alias ls="ls --color=auto"
-alias ll="ls -la"
-alias la="ls -lathr"
+alias la="ls -lah"
 alias lg="la | grep"
 
 alias t=tmux
