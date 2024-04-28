@@ -123,6 +123,7 @@ docs () {
 
 lazygit() {
     g pull
+    gs
     ga 
     gc "$1"
     gp
