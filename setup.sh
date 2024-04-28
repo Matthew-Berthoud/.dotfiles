@@ -1,5 +1,6 @@
 
-rm ~/.bash_profile ~/.bashrc ~/.vimrc ~/.tmux.conf
+rm ~/.bash_profile ~/.bashrc ~/.vimrc ~/.tmux.conf 
+rm -rf ~/.vim/colors
 
 echo "linking non-OS-specific configs"
 
@@ -7,6 +8,8 @@ ln -s ~/dotfiles/.bash_profile ~/.bash_profile
 ln -s ~/dotfiles/.bashrc ~/.bashrc
 ln -s ~/dotfiles/.vimrc ~/.vimrc
 ln -s ~/dotfiles/.tmux.conf ~/.tmux.conf
+
+ln -s ~/dotfiles/.vim/colors ~/.vim/colors
 
 if [ "$(uname -s)" = "Darwin" ]; then
     echo "linking alacritty config"

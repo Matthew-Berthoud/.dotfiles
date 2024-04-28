@@ -1,7 +1,9 @@
 set nocompatible
 
 syntax on
-colorscheme desert
+" colorscheme desert
+set termguicolors
+colorscheme catppuccin_frappe
 
 set number
 set relativenumber

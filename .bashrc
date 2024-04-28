@@ -83,6 +83,10 @@ econ () {
     cd /Users/matthewberthoud/Documents/ECON_$1/
 }
 
+cshw () {
+    cd ~/cs/$1/hw/$2/
+}
+
 cs () {
     cd ~/Documents/CSCI_$1/
 }
