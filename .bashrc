@@ -59,6 +59,7 @@ alias ll="ls -la"
 alias la="ls -lathr"
 alias lg="la | grep"
 
+alias tmux="tmux -2"
 alias t=tmux
 alias v=vim
 alias vr="v ~/.vimrc"
