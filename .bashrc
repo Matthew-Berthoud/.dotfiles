@@ -40,7 +40,7 @@ else
     export PATH="/home/bren/Software/sim/misc/yas:$PATH"
     export PATH="/home/bren/Software/sim/misc/yis:$PATH"
 
-    PS1="Lab(\W) "
+    PS1="\h(\W) "
 fi
 
 
