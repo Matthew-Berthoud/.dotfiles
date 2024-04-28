@@ -1,17 +1,46 @@
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/matthewberthoud/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/Users/matthewberthoud/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/Users/matthewberthoud/anaconda3/etc/profile.d/conda.sh"
+if [ "$os_name" = "Darwin" ]; then
+
+    # Mac
+    
+    # >>> conda initialize >>>
+    # !! Contents within this block are managed by 'conda init' !!
+    __conda_setup="$('/Users/matthewberthoud/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+    if [ $? -eq 0 ]; then
+        eval "$__conda_setup"
     else
-        export PATH="/Users/matthewberthoud/anaconda3/bin:$PATH"
+        if [ -f "/Users/matthewberthoud/anaconda3/etc/profile.d/conda.sh" ]; then
+            . "/Users/matthewberthoud/anaconda3/etc/profile.d/conda.sh"
+        else
+            export PATH="/Users/matthewberthoud/anaconda3/bin:$PATH"
+        fi
     fi
+    unset __conda_setup
+    # <<< conda initialize <<<
+
+else
+    # lab machines
+
+    # >>> conda initialize >>>
+    # !! Contents within this block are managed by 'conda init' !!
+    __conda_setup="$('/opt/anaconda/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+    if [ $? -eq 0 ]; then
+        eval "$__conda_setup"
+    else
+        if [ -f "/opt/anaconda/etc/profile.d/conda.sh" ]; then
+            . "/opt/anaconda/etc/profile.d/conda.sh"
+        else
+            export PATH="/opt/anaconda/bin:$PATH"
+        fi
+    fi
+    unset __conda_setup
+    # <<< conda initialize <<<
+
+    export PATH="/home/bren/Software/sim/misc/yas:$PATH"
+    export PATH="/home/bren/Software/sim/misc/yis:$PATH"
+
 fi
-unset __conda_setup
-# <<< conda initialize <<<
+
+
 
 PS1="(\W) "
 
@@ -81,9 +110,9 @@ docs () {
 
 lazygit() {
     g pull
-    ga "$@"
-    gc "lazy"
-    g push
+    ga 
+    gc "$1"
+    gp
 }
 
 # personalized help function that shows my notes
