@@ -123,16 +123,20 @@ docs () {
 
 lazygit() {
     gs
-    echo "\n********** GIT PULL **********"
+    echo
+    echo "********** GIT PULL **********"
     gl
     gs
-    echo "\n********** GIT PULL **********"
+    echo
+    echo "********** GIT PULL **********"
     ga 
     gs
-    echo "\n********* GIT COMMIT *********"
+    echo
+    echo "********* GIT COMMIT *********"
     gc "$1"
     gs
-    echo "\n********** GIT PUSH **********"
+    echo
+    echo "********** GIT PUSH **********"
     gp
     gs
 }
