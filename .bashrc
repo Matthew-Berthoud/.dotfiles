@@ -128,7 +128,7 @@ lazygit() {
     gl
     gs
     echo
-    echo "********** GIT PULL **********"
+    echo "********** GIT ADD ***********"
     ga 
     gs
     echo
