@@ -122,11 +122,19 @@ docs () {
 }
 
 lazygit() {
-    g pull
     gs
+    echo "\n********** GIT PULL **********"
+    gl
+    gs
+    echo "\n********** GIT PULL **********"
     ga 
+    gs
+    echo "\n********* GIT COMMIT *********"
     gc "$1"
+    gs
+    echo "\n********** GIT PUSH **********"
     gp
+    gs
 }
 
 # personalized help function that shows my notes
