@@ -48,6 +48,9 @@ fi
 
 
 # Most of my aliases (more at bottom)
+alias e="exit"
+alias c="clear"
+
 alias ch="open -a Google\ Chrome"
 alias lt="latexmk -pdf -pvc"
 
