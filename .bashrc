@@ -49,6 +49,7 @@ fi
 
 # Most of my aliases (more at bottom)
 alias ch="open -a Google\ Chrome"
+alias lt="latexmk -pdf -pvc"
 
 alias dot="cd ~/dotfiles"
 alias dt="cd ~/Desktop"
