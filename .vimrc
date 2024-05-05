@@ -25,6 +25,9 @@ set incsearch
 " Status bar enabled, even with one window open
 set laststatus=2
 
+" wrap at whitespace (word wrap)
+set nolist wrap linebreak breakat&vim
+
 " Normal mode reminders to use correct motions
 nnoremap <Left>  :echoe "Use h"<CR>
 nnoremap <Right> :echoe "Use l"<CR>
