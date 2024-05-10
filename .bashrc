@@ -161,5 +161,46 @@ h() {
 
 }
 
+# move only image on desktop to current directory
+img() {
+    desktop="~/Desktop"
+    img_names=$(find ~/Desktop -maxdepth 1 -type f -name "*.png")
+    # expand this reg exp eventually to consider more filetypes
+    img_count=$("$img_names" | wc -l)
+    if [ "$img_count" -eq 1 ]; then
+        echo Moving image $(img_names) to $(pwd)
+    elif [ "$count" -eq 0 ]; then
+        echo "There are no images on Desktop." 
+        return
+    else
+        echo "There are $(count) images on Desktop. Aborting."
+        return
+    fi
+
+    directory="."
+    files=$(ls "$directory")
+    
+    # Initialize variables to store the highest number
+    highest_number=0
+    
+    # Loop through each file
+    for file in $files; do
+        # Check if the file starts with "img-" followed by a number and has a file extension
+        if [[ $file =~ ^img-([0-9]+)\..+$ ]]; then
+            number="${BASH_REMATCH[1]}"
+            # Compare the number with the highest_number
+            if (( number > highest_number )); then
+                highest_number=$number
+            fi
+        fi
+    done
+
+    new_num=$highest_number + 1
+    # update this with more than png when you need to
+    mv "$img_names" "$directory/img-$new_num.png"
+}
+alias ss="mv ~/Desktop/Screen* ./"
+
+
 # Aliases for functions defined above
 alias lazy="lazygit"
