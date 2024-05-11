@@ -45,7 +45,8 @@ else
     PS1="\h(\W) "
 fi
 
-
+# vim mode for terminal
+set -o vi
 
 # Most of my aliases (more at bottom)
 alias e="exit"
