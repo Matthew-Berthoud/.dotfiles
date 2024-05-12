@@ -2,7 +2,7 @@ import = ["~/.config/alacritty/themes/themes/catppuccin_frappe.toml"]
 
 
 [font]
-size = 16
+size = 14
 
 [window]
 startup_mode = "Maximized"
