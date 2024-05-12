@@ -205,3 +205,4 @@ alias ss="mv ~/Desktop/Screen* ./"
 
 # Aliases for functions defined above
 alias lazy="lazygit"
+
