@@ -32,7 +32,7 @@ set nolist wrap linebreak breakat&vim
 set breakindent
 
 " wrapped lines indent 8 characters beyond
-set breakindentopt=shift:8
+" set breakindentopt=shift:8
 
 " Normal mode reminders to use correct motions
 nnoremap <Left>  :echoe "Use h"<CR>
