@@ -6,7 +6,6 @@ size = 14
 
 [window]
 startup_mode = "Maximized"
-decorations = "none"
 
 [window.padding]
 x = 0
