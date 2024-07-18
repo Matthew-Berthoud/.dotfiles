@@ -2,8 +2,7 @@
 os_name=$(uname -s)
 
 if [ "$os_name" = "Darwin" ]; then
-    echo ".bash_profile running on Mac."
-
+# Mac
     # >>> conda initialize >>>
     # !! Contents within this block are managed by 'conda init' !!
     __conda_setup="$('/Users/matthewberthoud/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
@@ -33,7 +32,7 @@ if [ "$os_name" = "Darwin" ]; then
     export BASH_SILENCE_DEPRECATION_WARNING=1
 
 else
-    echo ".bash_profile running on lab machine"
+# Linux
     export PATH="$PATH:/home/bren/Software/sim/misc/yas"
     export PATH="$PATH:/home/bren/Software/sim/misc/yis"
     export PATH="$PATH:/home/bren/Software/sim/misc"

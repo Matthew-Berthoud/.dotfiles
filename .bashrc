@@ -1,6 +1,6 @@
 os_name=$(uname -s)
 if [ "$os_name" = "Darwin" ]; then
-    echo ".bashrc running on Mac"
+# Mac OS
 
     # >>> conda initialize >>>
     # !! Contents within this block are managed by 'conda init' !!
@@ -20,8 +20,7 @@ if [ "$os_name" = "Darwin" ]; then
     # no hostname on local machine, just current dir
     PS1="(\W) "
 else
-    # lab machines
-    echo ".bashrc running on lab machine"
+    # Linux OS
 
     # >>> conda initialize >>>
     # !! Contents within this block are managed by 'conda init' !!
@@ -57,7 +56,7 @@ alias lt="latexmk -pdf -pvc"
 
 alias dot="cd ~/dotfiles"
 alias dt="cd ~/Desktop"
-alias sb="cd ~/Desktop/second_brain"
+alias sb="cd ~/second_brain"
 alias dl="cd ~/Downloads"
 alias dc="cd ~/Documents"
 alias ..="cd .."
@@ -79,6 +78,8 @@ alias gs="git status"
 alias ga="git add ."
 alias gc="git commit -m"
 alias gp="git push"
+
+alias ss="mv ~/Desktop/Screen* ./"
 
 # Use this to randomly select a machine, hopefully a fast one
 # For all other ssh stuff use Host names in .ssh/config
@@ -127,23 +128,18 @@ docs () {
 }
 
 lazygit() {
-    gs
-    echo
     echo "********** GIT PULL **********"
     gl
-    gs
-    echo
     echo "********** GIT ADD ***********"
     ga 
-    gs
-    echo
     echo "********* GIT COMMIT *********"
-    gc "$1"
-    gs
-    echo
+    if [ $1 ]; then
+        gc "$1"
+    else
+        gc "lazycommit"
+    fi
     echo "********** GIT PUSH **********"
     gp
-    gs
 }
 
 # personalized help function that shows my notes
@@ -200,7 +196,15 @@ img() {
     # update this with more than png when you need to
     mv "$img_names" "$directory/img-$new_num.png"
 }
-alias ss="mv ~/Desktop/Screen* ./"
+
+code() {
+    echo "You need to remember you're a vim guy..."
+    sleep 1
+    echo "Do NOT try to open VS Code again!"
+    sleep 1 
+    v $?
+}
+
 
 
 # Aliases for functions defined above
