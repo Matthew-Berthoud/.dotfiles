@@ -201,7 +201,7 @@ code() {
     echo "You need to remember you're a vim guy..."
     sleep 1
     echo "Do NOT try to open VS Code again!"
-    sleep 1 
+    sleep 2 
     v $?
 }
 
