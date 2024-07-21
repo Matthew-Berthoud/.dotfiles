@@ -57,3 +57,6 @@ set smarttab
 
 " matching curly brace if you hit enter after one
 inoremap {<CR> {<CR>}<Esc>O
+
+" yank and paste to/from clipboard by default
+set clipboard=unnamed

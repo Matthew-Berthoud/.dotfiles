@@ -1,42 +1,10 @@
 os_name=$(uname -s)
 if [ "$os_name" = "Darwin" ]; then
 # Mac OS
-
-    # >>> conda initialize >>>
-    # !! Contents within this block are managed by 'conda init' !!
-    __conda_setup="$('/Users/matthewberthoud/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-    if [ $? -eq 0 ]; then
-        eval "$__conda_setup"
-    else
-        if [ -f "/Users/matthewberthoud/anaconda3/etc/profile.d/conda.sh" ]; then
-            . "/Users/matthewberthoud/anaconda3/etc/profile.d/conda.sh"
-        else
-            export PATH="/Users/matthewberthoud/anaconda3/bin:$PATH"
-        fi
-    fi
-    unset __conda_setup
-    # <<< conda initialize <<<
-
     # no hostname on local machine, just current dir
     PS1="(\W) "
 else
     # Linux OS
-
-    # >>> conda initialize >>>
-    # !! Contents within this block are managed by 'conda init' !!
-    __conda_setup="$('/opt/anaconda/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-    if [ $? -eq 0 ]; then
-        eval "$__conda_setup"
-    else
-        if [ -f "/opt/anaconda/etc/profile.d/conda.sh" ]; then
-            . "/opt/anaconda/etc/profile.d/conda.sh"
-        else
-            export PATH="/opt/anaconda/bin:$PATH"
-        fi
-    fi
-    unset __conda_setup
-    # <<< conda initialize <<<
-
     export PATH="/home/bren/Software/sim/misc/yas:$PATH"
     export PATH="/home/bren/Software/sim/misc/yis:$PATH"
 
@@ -202,7 +170,7 @@ code() {
     sleep 1
     echo "Do NOT try to open VS Code again!"
     sleep 2 
-    v $?
+    v $@
 }
 
 
