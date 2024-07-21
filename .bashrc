@@ -35,6 +35,7 @@ alias lg="la | grep"
 
 alias t=tmux
 alias v=vim
+alias code=v
 alias vr="v ~/.vimrc"
 alias br="v ~/.bashrc"
 alias bp="v ~/.bash_profile"
@@ -165,13 +166,13 @@ img() {
     mv "$img_names" "$directory/img-$new_num.png"
 }
 
-code() {
-    echo "You need to remember you're a vim guy..."
-    sleep 1
-    echo "Do NOT try to open VS Code again!"
-    sleep 2 
-    v $@
-}
+#code() {
+#    echo "You need to remember you're a vim guy..."
+#    sleep 1
+#    echo "Do NOT try to open VS Code again!"
+#    sleep 2 
+#    v $@
+#}
 
 
 
