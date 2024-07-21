@@ -35,7 +35,7 @@ alias lg="la | grep"
 
 alias t=tmux
 alias v=vim
-alias code=v
+#alias code=v
 alias vr="v ~/.vimrc"
 alias br="v ~/.bashrc"
 alias bp="v ~/.bash_profile"
