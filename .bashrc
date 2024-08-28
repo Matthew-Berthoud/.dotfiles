@@ -29,13 +29,18 @@ alias dl="cd ~/Downloads"
 alias dc="cd ~/Documents"
 alias ..="cd .."
 
+alias 0="cd ~/Desktop/0-inbox"
+alias 1="cd ~/Desktop/1-projects"
+alias 2="cd ~/Desktop/2-areas"
+alias 3="cd ~/Desktop/3-resources"
+alias 4="cd ~/Desktop/4-archive"
+
 alias ls="ls --color=auto"
 alias la="ls -lah"
 alias lg="la | grep"
 
 alias t=tmux
 alias v=vim
-#alias code=v
 alias vr="v ~/.vimrc"
 alias br="v ~/.bashrc"
 alias bp="v ~/.bash_profile"
