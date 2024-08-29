@@ -29,6 +29,7 @@ alias dl="cd ~/Downloads"
 alias dc="cd ~/Documents"
 alias ..="cd .."
 
+alias r="cd ~/repos"
 alias 0="cd ~/Desktop/0-inbox"
 alias 1="cd ~/Desktop/1-projects"
 alias 2="cd ~/Desktop/2-areas"
