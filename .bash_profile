@@ -12,6 +12,11 @@ if [ "$os_name" = "Darwin" ]; then
     # Added by Toolbox App
     export PATH="$PATH:/Users/matthewberthoud/Library/Application Support/JetBrains/Toolbox/scripts"
 
+    # Setting PATH for Python 3.12
+    # The original version is saved in .bash_profile.pysave
+    PATH="/Library/Frameworks/Python.framework/Versions/3.12/bin:${PATH}"
+    export PATH
+
     # remove warning about default shell being zsh
     export BASH_SILENCE_DEPRECATION_WARNING=1
 
@@ -24,11 +29,6 @@ else
     export PATH="$PATH:/home/bren/Software/sim/seq"
 fi
 
-
 # Run this on startup obviously
 source ~/.bashrc
 
-# Setting PATH for Python 3.12
-# The original version is saved in .bash_profile.pysave
-PATH="/Library/Frameworks/Python.framework/Versions/3.12/bin:${PATH}"
-export PATH
