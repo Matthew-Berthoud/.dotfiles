@@ -63,12 +63,12 @@ sshlab () {
 }
 
 econ () {
-    cd /Users/matthewberthoud/Documents/ECON_$1/
+    cd "/Users/matthewberthoud/OneDrive - William & Mary/courses/econ/$1"
     pwd
 }
 
 cs () {
-    cd ~/cs/$1
+    cd "/Users/matthewberthoud/OneDrive - William & Mary/courses/cs/$1"
     pwd
 }
 
@@ -211,3 +211,8 @@ rm_DS_Store_dir () {
 alias lazy="lazygit"
 alias rmdir="rm_DS_Store_dir"
 
+alias alg="cs 653"
+alias swe="cs 535"
+alias sec="cs 667"
+alias mic="cs 780"
+alias cyb="cs 564"
