@@ -63,12 +63,12 @@ sshlab () {
 }
 
 econ () {
-    cd "/Users/matthewberthoud/OneDrive - William & Mary/courses/econ/$1"
+    cd /Users/matthewberthoud/OneDrive\ -\ William\ \&\ Mary/courses/econ/$1
     pwd
 }
 
 cs () {
-    cd "/Users/matthewberthoud/OneDrive - William & Mary/courses/cs/$1"
+    cd /Users/matthewberthoud/OneDrive\ -\ William\ \&\ Mary/courses/cs/$1
     pwd
 }
 
@@ -206,10 +206,23 @@ rm_DS_Store_dir () {
     fi
 }
 
+newrepo () {
+    if [ -e ".git" ]; then
+        echo "This is already a Git repository"
+        exit 1
+    fi
+
+    git init
+    git add *
+    git commit -m "initial"
+    gh repo create $(basename "$PWD") --private --source=. --remote=origin
+    git push --set-upstream origin main
+}
+
 
 # Aliases for functions defined above
 alias lazy="lazygit"
-alias rmdir="rm_DS_Store_dir"
+alias rmdirr="rm_DS_Store_dir"
 
 alias alg="cs 653"
 alias swe="cs 535"
