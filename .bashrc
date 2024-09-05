@@ -22,19 +22,18 @@ alias c="clear"
 alias ch="open -a Google\ Chrome"
 alias lt="latexmk -pdf -pvc"
 
-alias dot="cd ~/dotfiles"
+alias ..="cd .."
+alias ~="cd ~"
+alias b="cd -"
+
 alias dt="cd ~/Desktop"
-alias sb="cd ~/second_brain"
 alias dl="cd ~/Downloads"
 alias dc="cd ~/Documents"
-alias ..="cd .."
 
-alias r="cd ~/repos"
-alias 0="cd ~/Desktop/0-inbox"
-alias 1="cd ~/Desktop/1-projects"
-alias 2="cd ~/Desktop/2-areas"
-alias 3="cd ~/Desktop/3-resources"
-alias 4="cd ~/Desktop/4-archive"
+alias dot="cd ~/dotfiles"
+alias obs="cd ~/obsidian-vault"
+alias pri="cd ~/private"
+alias r="cd ~/repositories"
 
 alias ls="ls --color=auto"
 alias la="ls -lah"
@@ -63,12 +62,12 @@ sshlab () {
 }
 
 econ () {
-    cd /Users/matthewberthoud/OneDrive\ -\ William\ \&\ Mary/courses/econ/$1
+    cd /Users/matthewberthoud/onedrive/courses/econ/$1
     pwd
 }
 
 cs () {
-    cd /Users/matthewberthoud/OneDrive\ -\ William\ \&\ Mary/courses/cs/$1
+    cd /Users/matthewberthoud/onedrive/courses/cs/$1
     pwd
 }
 
@@ -108,11 +107,7 @@ lazygit() {
     echo "********** GIT ADD ***********"
     ga 
     echo "********* GIT COMMIT *********"
-    if [ $1 ]; then
-        gc "$1"
-    else
-        gc "lazycommit"
-    fi
+    gc "$1 lazycommit"
     echo "********** GIT PUSH **********"
     gp
 }
@@ -219,13 +214,33 @@ newrepo () {
     git push --set-upstream origin main
 }
 
+alg () {
+    cs 653
+    echo Analysis of Algorithms
+}
+
+swe () {
+    cs 535
+    echo Software Engineering
+}
+
+sec () {
+    cs 667
+    echo Concepts of Computer Security
+}
+
+mic () {
+    cs 780
+    echo Advanced Microarchitecture Security
+}
+
+cyb () {
+    cs 564
+    echo Applied Cybersecurity
+}
 
 # Aliases for functions defined above
 alias lazy="lazygit"
 alias rmdirr="rm_DS_Store_dir"
 
-alias alg="cs 653"
-alias swe="cs 535"
-alias sec="cs 667"
-alias mic="cs 780"
-alias cyb="cs 564"
+alias repocheck="la -R | grep git"
