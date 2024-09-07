@@ -31,8 +31,9 @@ alias dl="cd ~/Downloads"
 alias dc="cd ~/Documents"
 
 alias dot="cd ~/dotfiles"
-alias obs="cd ~/obsidian-vault"
+alias sb="cd ~/second-brain"
 alias pri="cd ~/private"
+alias one="cd ~/onedrive"
 alias r="cd ~/repositories"
 
 alias ls="ls --color=auto"
@@ -71,36 +72,6 @@ cs () {
     pwd
 }
 
-hw () {
-    cd ~/cs/$1/hw/$2/
-    if [ -d "repo" ]; then
-        cd repo
-    fi
-    pwd
-}
-
-notes () {
-    if [ "$1" = "461" ]; then
-        econ $1
-    else
-        cs $1
-    fi
-    if [ -d "notes" ]; then
-        cd notes
-        pwd
-    fi
-    if [ -f "notes.md" ]; then
-        v notes.md
-    fi
-}
-
-docs () {
-    case $1 in
-        sh | bash) ch https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html;;
-        *) echo No documentation linked for $1;;
-    esac
-}
-
 lazygit() {
     echo "********** GIT PULL **********"
     gl
@@ -110,22 +81,6 @@ lazygit() {
     gc "$1 lazycommit"
     echo "********** GIT PUSH **********"
     gp
-}
-
-# personalized help function that shows my notes
-h() {
-    case $1 in
-        git | g) case $2 in 
-            branch) 
-                echo "New branch:    g checkout -b <name>"
-                echo "               g branch <name> (doesn't switch to it)"
-                echo "First push:    g push -u origin"
-            ;;
-            *)  echo "Specify an option: branch, etc.";;
-        esac ;;
-        *) echo No helpdoc written for $1;;
-    esac
-
 }
 
 # move only image on desktop to current directory
