@@ -239,6 +239,11 @@ cyb () {
     echo Applied Cybersecurity
 }
 
+todo () {
+    obs
+    v README.md
+}
+
 # Aliases for functions defined above
 alias lazy="lazygit"
 alias rmdirr="rm_DS_Store_dir"
