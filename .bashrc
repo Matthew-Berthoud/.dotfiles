@@ -195,7 +195,7 @@ cyb () {
 }
 
 todo () {
-    obs
+    sb
     v README.md
 }
 
