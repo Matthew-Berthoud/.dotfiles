@@ -32,7 +32,6 @@ alias dc="cd ~/Documents"
 
 alias dot="cd ~/dotfiles"
 alias sb="cd ~/second-brain"
-alias pri="cd ~/private"
 alias one="cd ~/onedrive"
 alias r="cd ~/repositories"
 
