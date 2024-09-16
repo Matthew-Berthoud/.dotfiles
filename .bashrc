@@ -3,6 +3,7 @@ if [ "$os_name" = "Darwin" ]; then
 # Mac OS
     # no hostname on local machine, just current dir
     PS1="(\W) "
+
 else
     # Linux OS
     export PATH="/home/bren/Software/sim/misc/yas:$PATH"
