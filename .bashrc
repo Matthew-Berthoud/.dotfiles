@@ -13,6 +13,7 @@ else
     PS1="\h(\W) "
 fi
 
+
 # vim mode for terminal
 set -o vi
 
@@ -35,6 +36,8 @@ alias dot="cd ~/dotfiles"
 alias sb="cd ~/second-brain"
 alias one="cd ~/onedrive"
 alias r="cd ~/repositories"
+alias gdsc="cd ~/repositories/gdsc"
+alias fh="code ~/repositories/gdsc/flat-hat-games/wp-plugin"
 
 alias ls="ls --color=auto"
 alias la="ls -lah"
@@ -205,3 +208,6 @@ alias rmdirr="rm_DS_Store_dir"
 
 alias repocheck="la -R | grep git"
 
+eval "$(pyenv init --path)"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
