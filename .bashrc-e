@@ -211,7 +211,3 @@ alias repocheck="la -R | grep git"
 eval "$(pyenv init --path)"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
-
-[ -f "/Users/matthewberthoud/.ghcup/env" ] && . "/Users/matthewberthoud/.ghcup/env" # ghcup-env
-
-export GCLOUD_SERVICE_ACCOUNT_KEY_PATH='/Users/matthewberthoud/Local Sites/flathat-games-test/app/private/flat-hat-games-ea130-0a3ed4af2ca5.json'

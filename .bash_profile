@@ -43,8 +43,15 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-echo '    __               __   '
-echo '   / /_  ____ ______/ /_  '
-echo '  / __ \/ __ `/ ___/ __ \ '
-echo ' / /_/ / /_/ (__  ) / / / '
-echo '/_.___/\__,_/____/_/ /_/  '
+# Ruby stuff for jekyll
+source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
+source /opt/homebrew/opt/chruby/share/chruby/auto.sh
+chruby ruby-3.3.5
+
+[[ -f ~/.bashrc ]] && . ~/.bashrc # ghcup-env
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/matthewberthoud/google-cloud-sdk/path.bash.inc' ]; then . '/Users/matthewberthoud/google-cloud-sdk/path.bash.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/matthewberthoud/google-cloud-sdk/completion.bash.inc' ]; then . '/Users/matthewberthoud/google-cloud-sdk/completion.bash.inc'; fi
+
