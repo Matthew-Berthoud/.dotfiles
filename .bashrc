@@ -34,10 +34,11 @@ alias dc="cd ~/Documents"
 
 alias dot="cd ~/dotfiles"
 alias one="cd ~/onedrive"
+alias job="cd ~/onedrive/career"
 alias sb="cd ~/Desktop/second-brain"
 alias r="cd ~/Desktop/repositories"
 alias gdsc="cd ~/Desktop/repositories/gdsc"
-alias fh="code ~/Desktop/repositories/gdsc/flat-hat-games/wp-plugin"
+alias fh="code '/Users/matthewberthoud/Local Sites/flathat-games-test/app/public/wp-content/plugins/flathat-games'"
 
 alias ls="ls --color=auto"
 alias la="ls -lah"
@@ -213,5 +214,3 @@ eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
 [ -f "/Users/matthewberthoud/.ghcup/env" ] && . "/Users/matthewberthoud/.ghcup/env" # ghcup-env
-
-export GCLOUD_SERVICE_ACCOUNT_KEY_PATH='/Users/matthewberthoud/Local Sites/flathat-games-test/app/private/flat-hat-games-ea130-0a3ed4af2ca5.json'
