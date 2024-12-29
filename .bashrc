@@ -71,11 +71,6 @@ econ () {
     pwd
 }
 
-cs () {
-    cd /Users/matthewberthoud/onedrive/courses/cs/$1
-    pwd
-}
-
 lazygit() {
     echo "********** GIT PULL **********"
     gl
@@ -173,31 +168,6 @@ newrepo () {
     git push --set-upstream origin main
 }
 
-alg () {
-    cs 653
-    echo Analysis of Algorithms
-}
-
-swe () {
-    cs 535
-    echo Software Engineering
-}
-
-sec () {
-    cs 667
-    echo Concepts of Computer Security
-}
-
-mic () {
-    cs 780
-    echo Advanced Microarchitecture Security
-}
-
-cyb () {
-    cs 564
-    echo Applied Cybersecurity
-}
-
 todo () {
     sb
     v README.md
@@ -214,3 +184,6 @@ eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
 [ -f "/Users/matthewberthoud/.ghcup/env" ] && . "/Users/matthewberthoud/.ghcup/env" # ghcup-env
+
+# Created by `pipx` on 2024-12-15 02:36:27
+export PATH="$PATH:/Users/matthewberthoud/.local/bin"

@@ -55,3 +55,13 @@ if [ -f '/Users/matthewberthoud/google-cloud-sdk/path.bash.inc' ]; then . '/User
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/matthewberthoud/google-cloud-sdk/completion.bash.inc' ]; then . '/Users/matthewberthoud/google-cloud-sdk/completion.bash.inc'; fi
 
+
+
+# >>> coursier install directory >>>
+export PATH="$PATH:/Users/matthewberthoud/Library/Application Support/Coursier/bin"
+# <<< coursier install directory <<<
+
+# Created by `pipx` on 2024-12-15 02:36:27
+export PATH="$PATH:/Users/matthewberthoud/.local/bin"
+
+. "/usr/local/env"
