@@ -1,4 +1,4 @@
-# dotfiles
-Bash, Vim, Tmux and more config Files
+# .dotfiles
+Vim, Tmux and more config files
 
-* Used [this guide](https://gist.github.com/andersevenrud/015e61af2fd264371032763d4ed965b6) to get colors all working together well
+I reset my Mac to factory settings at the start of 2025. I'll rebuild this repo from there as I do things to it.
