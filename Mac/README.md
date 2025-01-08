@@ -1,12 +1,13 @@
 # MacBook Pro
 
 ## Specs 
-
-| Chip | Apple M1 |
-| Memory | 8GB |
-| Startup disk | Macintosh HD |
-| Display | 13.3-inch (2560 x 1600) |
-| Year | 2020 |
+| Specification   | Details                   |
+|-----------------|---------------------------|
+| Chip            | Apple M1                 |
+| Memory          | 8GB                      |
+| Startup disk    | Macintosh HD             |
+| Display         | 13.3-inch (2560 x 1600)  |
+| Year            | 2020                     |
 
 ## Git
 When you try to use `git` from the command-line of a fresh-intall Mac, it prompts you to install it along with various developer tools. I accepted these.
