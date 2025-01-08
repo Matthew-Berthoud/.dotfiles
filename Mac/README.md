@@ -8,6 +8,9 @@
 | Display | 13.3-inch (2560 x 1600) |
 | Year | 2020 |
 
+## xcode Developer Tools
+When you try to use `git` from the command-line of a fresh-intall Mac, it prompts you to install various developer tools. I accepted these.
+
 ## Karabiner Elements
 I remapped Caps Lock to be Escape when pressed once, and Ctrl when held down. This makes Vim much more ergonomic. Download [Karabiner Elements](https://karabiner-elements.pqrs.org), allow it to do all the crazy admin level things to your computer, and add this Complex Modification:
 
