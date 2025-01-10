@@ -1,13 +1,21 @@
 # MacBook Pro
 
 ## Specs 
-| Specification   | Details                   |
-|-----------------|---------------------------|
+| Specification   | Details                  |
+|-----------------|--------------------------|
 | Chip            | Apple M1                 |
 | Memory          | 8GB                      |
 | Startup disk    | Macintosh HD             |
 | Display         | 13.3-inch (2560 x 1600)  |
 | Year            | 2020                     |
+
+## File Organization
+I want my computer to be neat and tidy, without a lot of junk and dotfiles in my home directory. Things like the [XDG Base Directory Specification](https://specifications.freedesktop.org/basedir-spec/latest/) are attractive to me. XDG doesn't work perfectly cleanly with Mac, or with all applications. [This Apple Documentation](https://developer.apple.com/library/archive/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/FileSystemOverview/FileSystemOverview.html) is particularly to learn about the MacOS file system.
+
+MORE IN HERE ABOUT OTHER PROGRAMS.
+
+Docker Desktop for Mac makes it impossible to change the default `~/.docker` directory. Hopefully it will be resolved in [this issue](https://github.com/docker/roadmap/issues/408), so I can move `~/.docker` to `~/.config/docker`.
+
 
 ## Git
 When you try to use `git` from the command-line of a fresh-intall Mac, it prompts you to install it along with various developer tools. I accepted these.
