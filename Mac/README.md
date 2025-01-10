@@ -9,8 +9,16 @@
 | Display         | 13.3-inch (2560 x 1600)  |
 | Year            | 2020                     |
 
+## Shell
+I use `bash` instead of `zsh`, since `bash` is more ubiquitous in containers, servers, etc.
+Set the default shell in the Terminal app to `/bin/bash` in Terminal > Settings > General, or with
+```sh
+chsh -s /bin/bash
+```
+and then quitting and reoopening terminal.
+
 ## File Organization
-I want my computer to be neat and tidy, without a lot of junk and dotfiles in my home directory. Things like the [XDG Base Directory Specification](https://specifications.freedesktop.org/basedir-spec/latest/) are attractive to me. XDG doesn't work perfectly cleanly with Mac, or with all applications. [This Apple Documentation](https://developer.apple.com/library/archive/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/FileSystemOverview/FileSystemOverview.html) is particularly to learn about the MacOS file system.
+I want my computer to be neat and tidy, without a lot of junk in my home directory (`/home/YOUR_USERNAME`, or `~`). Things like the [XDG Base Directory Specification](https://specifications.freedesktop.org/basedir-spec/latest/) are attractive to me. XDG doesn't work perfectly cleanly with Mac, or with all applications. [This Apple Documentation](https://developer.apple.com/library/archive/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/FileSystemOverview/FileSystemOverview.html) is particularly to learn about the MacOS file system.
 
 MORE IN HERE ABOUT OTHER PROGRAMS.
 
