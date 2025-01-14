@@ -16,6 +16,7 @@ I use `bash` instead of `zsh`, since `bash` is more ubiquitous in containers, se
 chsh -s /bin/bash
 ```
 I don't install `tmux`, and instead just use the built-in `screen` utility to multiplex terminal screens.
+[Here](http://hayne.net/MacDev/Notes/unixFAQ.html#shellStartup) are some good notes on what shell configuration files are read when on Mac.
 
 <!--
 ## File Organization
