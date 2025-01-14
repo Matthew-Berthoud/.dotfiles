@@ -9,7 +9,7 @@ colorful_ps1() {
     cyan='\[\033[36m\]'
     white='\[\033[37m\]'
 
-    echo "${magenta}\u${reset}@${yellow}\h${reset}:${cyan}\w${reset} \$ "
+    echo "${magenta}\u${reset}@${yellow}\h${reset}:${cyan}\w${reset}\$ "
 }
 
 PS1=$(colorful_ps1)
