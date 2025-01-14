@@ -1,4 +1,5 @@
 export DOTFILES=$HOME/.dotfiles
+export SCRIPTS=$HOME/.dotfiles/scripts
 
 colorful_ps1() {
     reset='\[\033[0m\]'
@@ -20,7 +21,5 @@ PS1=$(colorful_ps1)
 # Vim keybindings for command-line
 set -o vi
 
-source $DOTFILES/scripts.sh
-
-alias rmdirr="rmdir_and_DS_Store"
+alias rmdirr="source $SCRIPTS/rmdir_and_DS_Store.sh"
 

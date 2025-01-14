@@ -10,5 +10,3 @@ for FILE in "${FILES_TO_LINK[@]}"; do
 	ln -si "$DOTFILES/$FILE" "$HOME/.$FILE"
 done
 
-source ~/.bash_profile
-

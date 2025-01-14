@@ -19,5 +19,7 @@ set hlsearch
 set wildmenu
 set wildmode=longest:full,full
 
+" Shows current filename in all modes
+set laststatus=2
 
 
