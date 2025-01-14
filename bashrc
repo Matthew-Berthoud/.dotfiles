@@ -1,3 +1,5 @@
+export DOTFILES=$HOME/.dotfiles
+
 colorful_ps1() {
     reset='\[\033[0m\]'
     black='\[\033[30m\]'
@@ -17,4 +19,8 @@ PS1=$(colorful_ps1)
 
 # Vim keybindings for command-line
 set -o vi
+
+source $DOTFILES/scripts.sh
+
+alias rmdirr="rmdir_and_DS_Store"
 
