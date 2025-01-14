@@ -4,10 +4,11 @@
 set -e
 
 DOTFILES="$HOME/.dotfiles"
-BASH_STARTUP_FILES=("bash_profile") # can add bashrc and others if needed
+FILES_TO_LINK=("bash_profile" "bashrc" "vimrc")
 
-for FILE in "${BASH_STARTUP_FILES[@]}"; do
+for FILE in "${FILES_TO_LINK[@]}"; do
 	ln -si "$DOTFILES/$FILE" "$HOME/.$FILE"
-	source "$HOME/.$FILE"
 done
+
+source ~/.bash_profile
 
