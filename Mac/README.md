@@ -9,11 +9,13 @@
 | Display         | 13.3-inch (2560 x 1600)  |
 | Year            | 2020                     |
 
-## Shell
+## Terminal and Shell
+I use the default Mac Terminal since I don't customize anything about the terminal itself, just what runs in it.
 I use `bash` instead of `zsh`, since `bash` is more ubiquitous in containers, servers, etc.
 ```sh
 chsh -s /bin/bash
 ```
+I don't install `tmux`, and instead just use the built-in `screen` utility to multiplex terminal screens.
 
 <!--
 ## File Organization
