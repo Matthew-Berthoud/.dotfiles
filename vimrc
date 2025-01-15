@@ -1,5 +1,6 @@
 syntax on
 set number
+set relativenumber
 
 set shiftwidth=4
 set tabstop=4
@@ -16,10 +17,11 @@ set showmatch
 set hlsearch
 
 " Autocomplete for commands
+set path+=**
 set wildmenu
-set wildmode=longest:full,full
 
 " Shows current filename in all modes
 set laststatus=2
 
-
+" Disable vi compatibility, enter the modern era
+set nocompatible

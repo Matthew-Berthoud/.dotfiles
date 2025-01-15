@@ -4,7 +4,7 @@
 set -e
 
 DOTFILES="$HOME/.dotfiles"
-FILES_TO_LINK=("bash_profile" "bashrc" "vimrc")
+FILES_TO_LINK=("bash_profile" "bashrc" "screenrc" "vimrc")
 
 for FILE in "${FILES_TO_LINK[@]}"; do
 	ln -si "$DOTFILES/$FILE" "$HOME/.$FILE"
