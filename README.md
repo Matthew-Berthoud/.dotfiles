@@ -64,3 +64,17 @@ I'm making a valiant effort to download as few development dependencies as possi
 
 (Bonus: You can play [Vim Golf](https://www.vimgolf.com) through Docker)
 
+## Homebrew
+I'm using homebrew for dependency management, but trying to catalog everything that gets installed and why it's there, so I don't end up with too many dependencies.
+
+Here's what I have so far. These can all be used by running `brew install NAME`
+
+| `NAME` | purpose |
+| ------ | ------- |
+| `ctags` | jumping between instantiations and usages of words (variables) within a codebase, with Vim |
+
+## Vim
+I'm using vanilla Vim as my text editor. Yeah, I know.
+[This video](https://www.youtube.com/watch?v=XA2WjJbmmoM) has helped make this easier.
+My vimrc is in this repo
+
