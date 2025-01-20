@@ -30,6 +30,11 @@ set path+=**
 " List of matches that you can ^n and ^p through to make choice
 set wildmenu
 
+" Ignore things when showing autocomplete options
+set wildignore+=**/vendor/**    " php with composer
+set wildignore+=**/tags         " ctags
+set wildignore+=**/node_modules/**
+
 " Shows current filename in all modes
 set laststatus=2
 
