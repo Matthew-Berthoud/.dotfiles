@@ -2,6 +2,13 @@
 
 _Configuration for Development and Life_
 
+## Goals
+Main goal: a brand new Mac can be opened up and configured by running a single script.
+
+Inspiration:
+[mathiasbynens' Dotfiles](https://github.com/mathiasbynens/dotfiles)
+[Brew Bundle](https://gist.github.com/ChristopherA/a579274536aab36ea9966f301ff14f3f)
+
 ## Tailscale
 I have all my devices connected through a [Tailscale](https://tailscale.com) Tailnet. 
 Without Tailscale, remotely accessing your devices from eachother is a bit more painful and risky, but with tailscale I can enable ssh between my devices easily.
@@ -73,8 +80,8 @@ Here's what I have so far. These can all be used by running `brew install NAME`
 | ------ | ------- |
 | `ctags` | jumping between instantiations and usages of words (variables) within a codebase, with Vim |
 
+
 ## Vim
 I'm using vanilla Vim as my text editor. Yeah, I know.
-[This video](https://www.youtube.com/watch?v=XA2WjJbmmoM) has helped make this easier.
-My vimrc is in this repo
+[This video](https://www.youtube.com/watch?v=XA2WjJbmmoM) inspired me, and I'm slowly building up a decent configuration.
 
