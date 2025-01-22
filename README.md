@@ -79,6 +79,7 @@ Here's what I have so far. These can all be used by running `brew install NAME`
 | `NAME` | purpose |
 | ------ | ------- |
 | `ctags` | jumping between instantiations and usages of words (variables) within a codebase, with Vim |
+| `unnatural scrollwheels` | let's me set mouse scroll to be Windows-style, but keep trackpad as Mac style |
 
 
 ## Vim
