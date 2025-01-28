@@ -13,13 +13,13 @@ set relativenumber
 set shiftwidth=4
 set tabstop=4
 set autoindent
-set expandtab
+" set expandtab
 
 " Show the line and column position of cursor.
 set ruler
 
 " Show matching words during a search.
-" set showmatch
+set showmatch
 
 " Highlight matching words while searching for text.
 " set hlsearch
