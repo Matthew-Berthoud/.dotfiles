@@ -91,4 +91,14 @@ So that I don't have to type the password every time when ssh-ing into a machine
 ```bash
 ssh-add --apple-use-keychain ~/.ssh/[your-private-key]
 ```
+```~/.ssh/config
+Host *
+	User [your-remote-username]
+    RequestTTY yes
+    UseKeychain yes
+    AddKeysToAgent yes
+    IdentityFile ~/.ssh/id_ed25519
+```
+
+__this hasn't actually changed anything for me__, I think its purpose is for passwords for the ssh keys themselves
 
