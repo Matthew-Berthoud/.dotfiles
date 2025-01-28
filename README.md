@@ -86,3 +86,9 @@ Here's what I have so far. These can all be used by running `brew install NAME`
 I'm using vanilla Vim as my text editor. Yeah, I know.
 [This video](https://www.youtube.com/watch?v=XA2WjJbmmoM) inspired me, and I'm slowly building up a decent configuration.
 
+## ssh
+So that I don't have to type the password every time when ssh-ing into a machine:
+```bash
+ssh-add --apple-use-keychain ~/.ssh/[your-private-key]
+```
+

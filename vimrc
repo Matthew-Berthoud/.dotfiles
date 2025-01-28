@@ -25,7 +25,7 @@ set ruler
 " set hlsearch
 
 " Will recursively search directories for filenames for file-related command
-set path+=**
+" set path+=**
 
 " List of matches that you can ^n and ^p through to make choice
 set wildmenu
