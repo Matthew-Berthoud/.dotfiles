@@ -89,6 +89,10 @@ I'm using vanilla Vim as my text editor. Yeah, I know.
 ## ssh
 So that I don't have to type the password every time when ssh-ing into a machine:
 ```bash
+ssh-copy-id -i ~/.ssh/id_ed25519.pub remote-user@remote-host
+```
+<!--
+```bash
 ssh-add --apple-use-keychain ~/.ssh/[your-private-key]
 ```
 ```~/.ssh/config
@@ -101,4 +105,5 @@ Host *
 ```
 
 __this hasn't actually changed anything for me__, I think its purpose is for passwords for the ssh keys themselves
+-->
 
