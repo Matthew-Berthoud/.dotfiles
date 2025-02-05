@@ -13,7 +13,10 @@ set relativenumber
 set shiftwidth=4
 set tabstop=4
 set autoindent
-" set expandtab
+set expandtab
+
+" don't expand tabs to spaces for Go files
+autocmd FileType go setlocal noexpandtab
 
 " Show the line and column position of cursor.
 set ruler
@@ -22,10 +25,10 @@ set ruler
 set showmatch
 
 " Highlight matching words while searching for text.
-" set hlsearch
+set hlsearch
 
 " Will recursively search directories for filenames for file-related command
-" set path+=**
+set path+=**
 
 " List of matches that you can ^n and ^p through to make choice
 set wildmenu
@@ -34,6 +37,7 @@ set wildmenu
 set wildignore+=**/vendor/**    " php with composer
 set wildignore+=**/tags         " ctags
 set wildignore+=**/node_modules/**
+set wildignore+=**/react/** "quality of life for flathat project, don't include the submodule
 
 " Shows current filename in all modes
 set laststatus=2
