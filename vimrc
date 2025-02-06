@@ -6,6 +6,7 @@ set nocompatible
 
 " Syntax highlighting and relative line numbers for easy jumping to correct location
 syntax on
+color default
 set number
 set relativenumber
 
