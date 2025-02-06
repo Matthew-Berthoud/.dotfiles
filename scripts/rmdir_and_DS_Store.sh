@@ -1,4 +1,4 @@
-# /bin/bash
+#!/bin/bash
 
 output=$(rmdir $1 2>&1)
 if [ $? -eq 0 ]; then

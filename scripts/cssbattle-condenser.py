@@ -1,4 +1,4 @@
-# /usr/bin/python3
+#!/usr/bin/python3
 
 '''
 Removes all unnecessary whitespace to get best score on CSSBattle.dev
