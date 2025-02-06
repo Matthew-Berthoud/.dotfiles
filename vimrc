@@ -43,9 +43,9 @@ set wildignore+=**/react/** "quality of life for flathat project, don't include 
 " Shows current filename in all modes
 set laststatus=2
 
-" As long as there are no unsaved changes in buffer,
-" automatically update the buffer when file changes on disk.
-" This is helpful when you want to keep the buffer open, but
-" you run `go fmt`, for example
+" Vim will know when file changes on disk.
+" If you save and it's like yo your buffer changed,
+" you can pull in the new verison with `:checktime`
+" This is helpful when you run `go fmt` in another terminal tab, for example.
 set autoread
 
