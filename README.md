@@ -23,6 +23,11 @@ My main use for Tailscale is [Tailscale SSH](https://tailscale.com/kb/1193/tails
 | Display         | 13.3-inch (2560 x 1600)  |
 | Year            | 2020                     |
 
+## PC
+I use a Windows PC for some gaming and hosting Linux VMs.
+I change the behavior of the caps lock key to function as both escape and control (helpful for vim) with [kmonad](https://github.com/kmonad/kmonad/tree/master).
+The config.kbd file in this repo sets it up, and it can be used on both Windows and Linux, which is convenient, since I use both on this computer.
+
 ## Terminal and Shell
 I use the default Mac Terminal since I don't customize anything about the terminal itself, just what runs in it.
 I use `bash` instead of `zsh`, since `bash` is more ubiquitous in containers, servers, etc.
