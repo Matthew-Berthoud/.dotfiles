@@ -1,5 +1,4 @@
 caption always
 caption string '%-Lw%{= BW}%50>%n%f* %t%{-}%+Lw%<'
 
-defshell -bash
 defscrollback 1000000
