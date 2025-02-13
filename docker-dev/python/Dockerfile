@@ -12,6 +12,7 @@ USER mwberthoud
 WORKDIR /home/mwberthoud
 
 ENV TERM=xterm-256color
+ENV SHELL=/bin/bash
 
 RUN git clone https://github.com/Matthew-Berthoud/.dotfiles.git
 
