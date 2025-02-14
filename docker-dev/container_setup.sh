@@ -5,7 +5,8 @@
 
 set -e
 
-mv $HOME/.bashrc $HOME/.default-bashrc
+cd $HOME
+mv .bashrc .default-bashrc
 git config --global user.email "mwberthoud@wm.edu"
 git config --global user.name "Matthew Berthoud"
 
