@@ -11,16 +11,8 @@ RUN useradd -ms /bin/bash mwberthoud
 USER mwberthoud
 WORKDIR /home/mwberthoud
 
-ENV TERM=xterm-256color
-ENV SHELL=/bin/bash
-
 RUN git clone https://github.com/Matthew-Berthoud/.dotfiles.git
-
-# Get rid of current bashrc so mine can come in with pretty colors!
-RUN mv /home/mwberthoud/.bashrc /home/mwberthoud/.default-bashrc
-RUN bash .dotfiles/scripts/install.sh
-RUN mkdir .ssh
-RUN touch .ssh/known_hosts
+RUN bash .dotfiles/docker-dev/setup.sh
 
 WORKDIR /workspace
 
