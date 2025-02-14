@@ -12,10 +12,16 @@ ENV SHELL=/bin/bash
 
 RUN useradd -ms /bin/bash mwberthoud
 USER mwberthoud
-WORKDIR /home/mwberthoud
 
+WORKDIR /home/mwberthoud
+RUN mv .bashrc .default-bashrc
 RUN git clone https://github.com/Matthew-Berthoud/.dotfiles.git
-RUN /bin/bash .dotfiles/docker-dev/container_setup.sh
+
+WORKDIR /home/mwberthoud/.dotfiles
+RUN bash scripts/install.sh
+RUN git remote set-url origin git@github.com:Matthew-Berthoud/.dotfiles.git
+RUN git config --global user.email "mwberthoud@wm.edu"
+RUN git config --global user.name "Matthew Berthoud"
 
 WORKDIR /workspace
 
