@@ -21,7 +21,7 @@ if [ -n "$3" ]; then
 fi
 
 LANGUAGE=$1
-DOCKERFILE_PATH="$DOTFILES/docker/$LANGUAGE.Dockerfile"
+DOCKERFILE_PATH="$DOTFILES/docker-dev/$LANGUAGE.Dockerfile"
 
 if [ ! -f "$DOCKERFILE_PATH" ]; then
   echo "Error: Dockerfile not found at $DOCKERFILE_PATH"

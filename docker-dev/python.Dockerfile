@@ -14,7 +14,7 @@ USER mwberthoud
 WORKDIR /home/mwberthoud
 
 RUN git clone https://github.com/Matthew-Berthoud/.dotfiles.git
-RUN source .dotfiles/docker-dev/container_setup.sh
+RUN bash .dotfiles/docker-dev/container_setup.sh
 
 WORKDIR /workspace
 
