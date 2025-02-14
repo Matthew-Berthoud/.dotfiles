@@ -7,12 +7,14 @@ RUN apt-get update && apt-get install -y \
     curl \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
+ENV TERM=/bin/bash
+
 RUN useradd -ms /bin/bash mwberthoud
 USER mwberthoud
 WORKDIR /home/mwberthoud
 
 RUN git clone https://github.com/Matthew-Berthoud/.dotfiles.git
-RUN bash .dotfiles/docker-dev/setup.sh
+RUN source .dotfiles/docker-dev/container_setup.sh
 
 WORKDIR /workspace
 
