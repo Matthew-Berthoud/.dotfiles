@@ -7,7 +7,8 @@ RUN apt-get update && apt-get install -y \
     curl \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
-ENV TERM=/bin/bash
+ENV TERM=xterm-256color
+ENV SHELL=/bin/bash
 
 RUN useradd -ms /bin/bash mwberthoud
 USER mwberthoud
