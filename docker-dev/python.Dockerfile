@@ -14,6 +14,7 @@ RUN useradd -ms /bin/bash mwberthoud
 USER mwberthoud
 WORKDIR /home/mwberthoud
 
+RUN rm .bashrc
 RUN git clone https://github.com/Matthew-Berthoud/.dotfiles.git
 RUN bash .dotfiles/docker-dev/container_setup.sh
 

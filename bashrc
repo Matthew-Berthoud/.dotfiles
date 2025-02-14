@@ -22,5 +22,5 @@ PS1=$(colorful_ps1)
 set -o vi
 
 alias rmdirr="source $SCRIPTS/rmdir_and_DS_Store.sh"
-alias ddev="source $DOTFILES/docker-dev/launch.sh"
+alias ddev="bash $DOTFILES/docker-dev/launch.sh"
 

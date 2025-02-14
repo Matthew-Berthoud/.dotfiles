@@ -5,12 +5,11 @@
 
 set -e
 
-cd $HOME
-mv .bashrc .default-bashrc
+cd $HOME/.dotfiles
+bash scripts/install.sh
+git remote set-url origin git@github.com:Matthew-Berthoud/.dotfiles.git
+
 git config --global user.email "mwberthoud@wm.edu"
 git config --global user.name "Matthew Berthoud"
 
-cd $HOME/.dotfiles
-source scripts/install.sh
-git remote set-url origin git@github.com:Matthew-Berthoud/.dotfiles.git
 
