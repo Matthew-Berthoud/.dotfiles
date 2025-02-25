@@ -10,13 +10,15 @@ color default
 set number
 set relativenumber
 
-" More natural behavior with tabs
-set shiftwidth=4
-set tabstop=4
+" INDENTATION
+" Default settings: 4 spaces for indentation
+set tabstop=4       " Number of spaces that a <Tab> represents
+set softtabstop=4   " Number of spaces for a <Tab> in insert mode
+set shiftwidth=4    " Number of spaces to use for autoindent
 set autoindent
-set expandtab
-
-" don't expand tabs to spaces for Go files
+set expandtab       " Convert tabs to spaces
+" File-specific settings
+autocmd FileType javascript,typescript,html setlocal tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType go setlocal noexpandtab
 
 " Show the line and column position of cursor.
