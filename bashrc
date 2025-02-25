@@ -23,4 +23,5 @@ set -o vi
 
 alias rmdirr="source $SCRIPTS/rmdir_and_DS_Store.sh"
 alias ddev="bash $DOTFILES/docker-dev/launch.sh"
+alias fhg="ddev react 5173 5173"
 
