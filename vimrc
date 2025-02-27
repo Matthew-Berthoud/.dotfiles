@@ -18,7 +18,7 @@ set shiftwidth=4    " Number of spaces to use for autoindent
 set autoindent
 set expandtab       " Convert tabs to spaces
 " File-specific settings
-autocmd FileType javascript,typescript,html setlocal tabstop=2 shiftwidth=2 softtabstop=2
+autocmd FileType javascript,typescript,html,scss,tsx setlocal tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType go setlocal noexpandtab
 
 " Show the line and column position of cursor.
