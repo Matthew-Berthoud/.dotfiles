@@ -48,6 +48,7 @@ rm_DS_Store_and_dir() {
 }
 
 navigate_to_port() {
-    open -a Safari "localhost:$1"
+    # open app in the background
+    open -g -a Safari "localhost:$1"
 }
 
