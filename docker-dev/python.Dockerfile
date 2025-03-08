@@ -23,6 +23,6 @@ RUN git remote set-url origin git@github.com:Matthew-Berthoud/.dotfiles.git
 RUN git config --global user.email "mwberthoud@wm.edu"
 RUN git config --global user.name "Matthew Berthoud"
 
-WORKDIR /workspace
+WORKDIR /repos
 
 CMD ["/bin/bash"]

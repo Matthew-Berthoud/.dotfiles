@@ -27,7 +27,7 @@ RUN git remote set-url origin git@github.com:Matthew-Berthoud/.dotfiles.git
 RUN git config --global user.email "matthewberthoud@gmail.com"
 RUN git config --global user.name "Matthew Berthoud"
 
-WORKDIR /workspace
+WORKDIR /repos
 
 EXPOSE 5173
 

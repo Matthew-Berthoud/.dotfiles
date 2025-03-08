@@ -26,4 +26,4 @@ RUN bash .dotfiles/scripts/install.sh
 RUN mkdir .ssh
 RUN touch .ssh/known_hosts
 
-WORKDIR /workspace
+WORKDIR /repos
