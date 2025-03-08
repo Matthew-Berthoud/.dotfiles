@@ -7,6 +7,7 @@ set -o vi
 
 PS1=$(colorful_ps1)
 
+alias dot="cd $DOTFILES"
 alias rmdirr="rm_DS_Store_and_dir"
 alias nav="navigate_to_port"
 alias ddev="bash $DOTFILES/docker-dev/launch.sh"

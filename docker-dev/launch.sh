@@ -35,6 +35,8 @@ docker build -t "$IMAGE_NAME" -f "$DOCKERFILE_PATH" .
 docker run -it --rm \
     -v ~/.ssh:/home/mwberthoud/.ssh \
     -v ~/repos:/repos \
+    -v "go-folder:/go" \
+    -v "gnu-screen-sessions:/var/run/screen" \
     -v "$IMAGE_NAME-workspace:/workspace" \
     -p "$HOST_PORT":"$CONTAINER_PORT"\
     "$IMAGE_NAME"
