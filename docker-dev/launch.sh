@@ -32,7 +32,7 @@ IMAGE_NAME="$LANGUAGE-ddev"
 docker build -t "$IMAGE_NAME" -f "$DOCKERFILE_PATH" .
 
 # SSH keys are stored as a docker volume so I can access private repos from the dev container
-docker run -it --rm \
+docker run -it \
     -v ~/.ssh:/home/mwberthoud/.ssh \
     -v ~/repos:/repos \
     -v "$LANGUAGE-go-folder:/go" \
