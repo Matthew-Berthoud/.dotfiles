@@ -16,7 +16,7 @@ ENV SHELL=/bin/bash
 ENV GO111MODULE=on
 ENV GOPATH=/go
 
-RUN git clone https://github.com/Matthew-Berthoud/.dotfiles.git
+COPY . /home/mwberthoud/.dotfiles
 RUN git config --global user.email "mwberthoud@wm.edu"
 RUN git config --global user.name "Matthew Berthoud"
 

@@ -29,7 +29,7 @@ if [ ! -f "$DOCKERFILE_PATH" ]; then
 fi
 
 IMAGE_NAME="$LANGUAGE-ddev"
-docker build -t "$IMAGE_NAME" -f "$DOCKERFILE_PATH" .
+docker build -t "$IMAGE_NAME" -f "$DOCKERFILE_PATH" "$DOTFILES"
 
 # SSH keys are stored as a docker volume so I can access private repos from the dev container
 docker run -it --rm \
