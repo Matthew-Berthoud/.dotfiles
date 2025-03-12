@@ -1,29 +1,14 @@
-FROM golang:latest
+FROM docker-dev-base AS docker-dev-go
 
-RUN apt-get update && apt-get install -y \
-    vim \
-    screen \
-    git \
-    curl \
-    && apt-get clean && rm -rf /var/lib/apt/lists/*
-
-RUN useradd -ms /bin/bash mwberthoud
-USER mwberthoud
-WORKDIR /home/mwberthoud
-
-ENV TERM=xterm-256color
-ENV SHELL=/bin/bash
+ENV GO_VERSION=1.24.1
 ENV GO111MODULE=on
 ENV GOPATH=/go
+ENV PATH=$PATH:/usr/local/go/bin
+ENV PATH=$PATH:$GOPATH/bin
 
-COPY . /home/mwberthoud/.dotfiles
-RUN git config --global user.email "mwberthoud@wm.edu"
-RUN git config --global user.name "Matthew Berthoud"
+USER root
+RUN wget https://golang.org/dl/go${GO_VERSION}.linux-amd64.tar.gz \
+    && tar -C /usr/local -xzf go${GO_VERSION}.linux-amd64.tar.gz \
+    && rm go${GO_VERSION}.linux-amd64.tar.gz
+USER mwberthoud
 
-# Get rid of current bashrc so mine can come in with pretty colors!
-RUN mv /home/mwberthoud/.bashrc /home/mwberthoud/.default-bashrc
-RUN bash .dotfiles/scripts/install.sh
-RUN mkdir .ssh
-RUN touch .ssh/known_hosts
-
-WORKDIR /repos

@@ -11,7 +11,14 @@ colorful_ps1() {
     cyan='\[\033[36m\]'
     white='\[\033[37m\]'
 
-    echo "${magenta}\u${reset}@${yellow}\h${reset}:${cyan}\w${reset}\$ "
+    user="${magenta}\u${reset}"
+    host="${yellow}\h${reset}"
+    dir="${cyan}\w${reset}"
+
+    if [ -n "${CONTAINER_HOSTNAME}" ]; then
+        host="${yellow}$CONTAINER_HOSTNAME${reset}"
+    fi
+    echo "${user}@${host}:${dir}\$ "
 }
 
 rm_DS_Store_and_dir() {
