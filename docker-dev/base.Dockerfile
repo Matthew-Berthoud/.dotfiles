@@ -7,6 +7,7 @@ RUN apt-get update && apt-get install -y \
     curl \
     wget \
     tar \
+    unzip \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 ENV TERM=xterm-256color
@@ -15,7 +16,7 @@ ENV SHELL=/bin/bash
 RUN git config --global user.email "matthewberthoud@gmail.com"
 RUN git config --global user.name "Matthew Berthoud"
 
-RUN useradd -ms /bin/bash mwberthoud
+RUN useradd -m mwberthoud
 USER mwberthoud
 
 WORKDIR /home/mwberthoud
@@ -26,5 +27,4 @@ RUN mkdir .ssh
 RUN touch .ssh/known_hosts
 
 WORKDIR /repos
-
 

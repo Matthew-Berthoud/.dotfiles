@@ -1,4 +1,4 @@
-FROM docker-dev-base AS docker-dev-go
+FROM docker-dev-base
 
 ENV GO_VERSION=1.24.1
 ENV GO111MODULE=on
