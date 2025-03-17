@@ -1,36 +1,26 @@
 #!/bin/bash
 
-# Docker Dev, or ddev allows you to program in many languages without having them installed!
-
 set -e
 
-if [ -z "$1" ]; then
-  echo "Usage: $0 <language>"
-  exit 1
-fi
-lang=$1
+DOTFILES="${DOTFILES:-$HOME/.dotfiles}"
+BASE_DOCKERFILE="$DOTFILES/docker-dev/base.Dockerfile"
+LANG_DOCKERFILE="$DOTFILES/docker-dev/$1.Dockerfile"
 
-base_path="$DOTFILES/docker-dev/base.Dockerfile"
-if [ ! -f "$base_path" ]; then
-  echo "Error: Dockerfile not found at $base_path"
-  exit 1
+if [ $# -eq 0 ] || [ ! -f "$LANG_DOCKERFILE" ]; then
+    echo "Usage: $0 <language>"
+    echo "Error: Dockerfile not found for the specified language"
+    exit 1
 fi
 
-path="$DOTFILES/docker-dev/$lang.Dockerfile"
-if [ ! -f "$path" ]; then
-  echo "Error: Dockerfile not found at $path"
-  exit 1
-fi
+tag="docker-dev-$1"
 
-tag="docker-dev-$lang"
-
-docker build -f "$base_path" "$DOTFILES"
-docker build -t "$tag" -f "$path" .
+docker build -t docker-dev-base -f "$BASE_DOCKERFILE" "$DOTFILES"
+docker build -t "$tag" -f "$LANG_DOCKERFILE" .
 docker run -it --rm \
-    --env CONTAINER_HOSTNAME="$lang-container" \
-    -v ~/.ssh:/home/mwberthoud/.ssh \
-    -v ~/repos:/repos \
-    -v "$lang-go-folder":/go \
+    --env CONTAINER_HOSTNAME="$1-container" \
+    -v "$HOME/.ssh:/home/mwberthoud/.ssh" \
+    -v "$HOME/repos:/repos" \
+    -v "$1-go-folder:/go" \
     -P \
     "$tag"
 
