@@ -8,11 +8,12 @@ cd "$DOTFILES"
 
 FILES_TO_LINK=("bash_profile" "bashrc" "screenrc" "vimrc")
 for FILE in "${FILES_TO_LINK[@]}"; do
-	ln -si "$DOTFILES/$FILE" "$HOME/.$FILE"
+	ln -sf "$DOTFILES/$FILE" "$HOME/.$FILE"
 done
 
-CONFIG_DIRS=("nvim")
+CONFIG_DIRS=("nvim" "tmux")
 for DIR in "${CONFIG_DIRS[@]}"; do
-    ln -si "$DOTFILES/$DIR" "$HOME/.config/$DIR"
+    rm -rf "$HOME/.config/$DIR"
+    ln -sf "$DOTFILES/$DIR" "$HOME/.config/$DIR"
 done
 
