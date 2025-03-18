@@ -1,6 +1,5 @@
 -- Basic setup
 vim.cmd('syntax on')
--- vim.cmd('color habamax')
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.ruler = true
