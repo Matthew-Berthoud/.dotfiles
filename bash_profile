@@ -5,6 +5,10 @@ if [[ "$(uname)" == "Darwin" ]]; then
 
     # Homebrew on path
     eval "$(/opt/homebrew/bin/brew shellenv)"
+
+    # Go on path
+    export PATH=$PATH:/usr/local/go/bin
+
 fi
 
 source ~/.bashrc
