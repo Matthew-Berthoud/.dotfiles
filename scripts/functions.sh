@@ -59,3 +59,10 @@ navigate_to_port() {
     open -g -a Safari "localhost:$1"
 }
 
+make_project_zip() {
+    project="$1"
+    project_folder="$HOME/repos/Distributed-System-Security/Projects/$project/"
+
+    cd $project_folder && make clean && zip -r $project.zip *
+    mv $project.zip $HOME/Downloads/
+}
