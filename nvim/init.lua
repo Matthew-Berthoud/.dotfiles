@@ -27,7 +27,7 @@ require('lazy').setup({
 
 -- Set colorscheme
 vim.opt.termguicolors = true
-vim.cmd.colorscheme('tokyonight')
+vim.cmd.colorscheme('tokyonight-day')
 
 ---
 -- LSP setup
