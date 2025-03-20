@@ -1,16 +1,20 @@
-# Development
 brew 'neovim'
 brew 'tmux'
 
-# For Neovim
+# Tool for Neovim
 brew 'ripgrep'
-cask 'font-jetbrains-mono-nerd-font'
 
-# Utilities
+# Utility to see file structure
 brew 'tree'
 
-# Languages
+# Node version manager
 brew 'nvm'
 
-# Control
+# Natural scrolling for trackpad, old-fashioned scrolling for mouse
 cask 'unnaturalscrollwheels'
+
+# Nerd font for Neovim
+cask 'font-jetbrains-mono-nerd-font'
+
+# Extra browser besides Safari
+cask 'firefox'
