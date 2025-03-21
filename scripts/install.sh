@@ -76,9 +76,11 @@ if [ "$(uname)" == "Darwin" ]; then
 
     # Install Mac developer tools that Brew depends on
     install_xcode_tools
-
-    # Install what's in the Brewfile and remove any brew stuff that isn't in Brewfile
+    
+    # Remove anything installed with brew that isn't in the current Brewfile
     brew bundle --force cleanup --file=Brewfile
+    # Install what's in the Brewfile
+    brew bundle
 
     # Install Tailscale
     if [ -e "/Applications/Tailscale.app" ]; then

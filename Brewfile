@@ -1,3 +1,4 @@
+brew 'colima'
 brew 'curl'
 brew 'docker'
 brew 'docker-compose'
