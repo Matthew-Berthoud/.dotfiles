@@ -2,19 +2,22 @@
 
 _Configuration for Development and Life_
 
-## Goals
-Main goal: a brand new Mac can be opened up and configured by running a single script.
-
-Inspiration:
-[mathiasbynens' Dotfiles](https://github.com/mathiasbynens/dotfiles)
-[Brew Bundle](https://gist.github.com/ChristopherA/a579274536aab36ea9966f301ff14f3f)
+## Goal
+A brand new Mac can be opened up and configured by running a single script (`scripts/install.sh`).
 
 ## Tailscale
 I have all my devices connected through a [Tailscale](https://tailscale.com) Tailnet. 
 Without Tailscale, remotely accessing your devices from eachother is a bit more painful and risky, but with tailscale I can enable ssh between my devices easily.
 My main use for Tailscale is [Tailscale SSH](https://tailscale.com/kb/1193/tailscale-ssh), but it has many other features as well!
 
+## PC
+I use a Windows PC for some gaming and hosting Linux VMs.
+I change the behavior of the caps lock key to function as both escape and control (helpful for vim) with [kmonad](https://github.com/kmonad/kmonad/tree/master).
+The config.kbd file in this repo sets it up, and it can be used on both Windows and Linux, which is convenient, since I use both on this computer.
+
 ## Mac
+My main machine, and the one for which these dotfiles are primarily written, is a Mac.
+
 | Specification   | Details                  |
 |-----------------|--------------------------|
 | Chip            | Apple M1                 |
@@ -23,84 +26,31 @@ My main use for Tailscale is [Tailscale SSH](https://tailscale.com/kb/1193/tails
 | Display         | 13.3-inch (2560 x 1600)  |
 | Year            | 2020                     |
 
-## PC
-I use a Windows PC for some gaming and hosting Linux VMs.
-I change the behavior of the caps lock key to function as both escape and control (helpful for vim) with [kmonad](https://github.com/kmonad/kmonad/tree/master).
-The config.kbd file in this repo sets it up, and it can be used on both Windows and Linux, which is convenient, since I use both on this computer.
+## Homebrew
+I use homebrew to manage dependencies, and Brewfiles to manage the management of dependencies, with
+[brew bundle](https://gist.github.com/ChristopherA/a579274536aab36ea9966f301ff14f3f).
+Some things like Go and Tailscale I don't use homebrew for, and running the `install.sh` script should make it clear how they're installed.
+
+## Karabiner Elements
+I remapped Caps Lock to be Escape when pressed once, and Ctrl when held down. This makes Vim much more ergonomic.
+Karabiner Elements gets installed with Homebrew, and you can add the file in this repo as a Complex Modification to get the remapped behavior.
 
 ## Terminal and Shell
 I use the default Mac Terminal since I don't customize anything about the terminal itself, just what runs in it.
-I use `bash` instead of `zsh`, since `bash` is more ubiquitous in containers, servers, etc.
+I use `bash` instead of `zsh`, since `bash` is more ubiquitous in containers, servers, etc, so it's worth getting used to.
 ```sh
 chsh -s /bin/bash
 ```
-I don't install `tmux`, and instead just use the built-in `screen` utility to multiplex terminal screens.
 [Here](http://hayne.net/MacDev/Notes/unixFAQ.html#shellStartup) are some good notes on what shell configuration files are read when on Mac.
 
-<!--
-## File Organization
-I want my computer to be neat and tidy, without a lot of junk in my home directory (`/home/YOUR_USERNAME`, or `~`). Things like the [XDG Base Directory Specification](https://specifications.freedesktop.org/basedir-spec/latest/) are attractive to me. XDG doesn't work perfectly cleanly with Mac, or with all applications. [This Apple Documentation](https://developer.apple.com/library/archive/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/FileSystemOverview/FileSystemOverview.html) is particularly to learn about the MacOS file system.
-
-MORE IN HERE ABOUT OTHER PROGRAMS.
-
-Docker Desktop for Mac makes it impossible to change the default `~/.docker` directory. Hopefully it will be resolved in [this issue](https://github.com/docker/roadmap/issues/408), so I can move `~/.docker` to `~/.config/docker`.
--->
-
-
-## Git
-When you try to use `git` from the command-line of a fresh-intall Mac, it prompts you to install it along with various developer tools. I accepted these.
-I use [ssh authentication with GitHub](https://docs.github.com/en/authentication/connecting-to-github-with-ssh), since I want to not have to enter a username and password every time I push, and I don't want to install the GitHub CLI.
-
-## Karabiner Elements
-I remapped Caps Lock to be Escape when pressed once, and Ctrl when held down. This makes Vim much more ergonomic. Download [Karabiner Elements](https://karabiner-elements.pqrs.org), allow it to do all the crazy admin level things to your computer, and add this Complex Modification:
-
-```
-{
-    "description": "Caps→Esc/Ctrl if held",
-    "manipulators": [
-        {
-            "from": {
-                "key_code": "caps_lock",
-                "modifiers": { "optional": ["any"] }
-            },
-            "to": [{ "key_code": "left_control" }],
-            "to_if_alone": [{ "key_code": "escape" }],
-            "type": "basic"
-        }
-    ]
-}
-```
-
-## Docker Desktop
-I'm making a valiant effort to download as few development dependencies as possible onto my machine, since I had over 120G of randomly strewn about "System Data" last time. [Docker](https://www.docker.com) helps keep things off my machine.
+## Development
+neovim, tmux, docker
 
 (Bonus: You can play [Vim Golf](https://www.vimgolf.com) through Docker)
-
-## Homebrew
-See the Brewfile in this repo to see what I have installed on my Mac.
-
-## Vim
-I'm using vanilla Vim as my text editor. Yeah, I know.
-[This video](https://www.youtube.com/watch?v=XA2WjJbmmoM) inspired me, and I'm slowly building up a decent configuration.
 
 ## ssh
 So that I don't have to type the password every time when ssh-ing into a machine:
 ```bash
 ssh-copy-id -i ~/.ssh/id_ed25519.pub remote-user@remote-host
 ```
-<!--
-```bash
-ssh-add --apple-use-keychain ~/.ssh/[your-private-key]
-```
-```~/.ssh/config
-Host *
-	User [your-remote-username]
-    RequestTTY yes
-    UseKeychain yes
-    AddKeysToAgent yes
-    IdentityFile ~/.ssh/id_ed25519
-```
-
-__this hasn't actually changed anything for me__, I think its purpose is for passwords for the ssh keys themselves
--->
 
