@@ -8,7 +8,6 @@ handle_error() {
     local exit_code=$?
     local command="$BASH_COMMAND"
     echo "Error: Command '$command' failed with exit code $exit_code" >&2
-    exit $exit_code
 }
 install_xcode_tools() {
     # Check if Xcode CLT are installed
@@ -51,7 +50,7 @@ prompt_go_install() {
 
 trap 'handle_error' ERR
 
-FILES_TO_LINK=("bash_profile" "bashrc")
+FILES_TO_LINK=("bash_profile" "bashrc" "vimrc")
 for FILE in "${FILES_TO_LINK[@]}"; do
 	ln -sf "$DOTFILES/$FILE" "$HOME/.$FILE"
 done
