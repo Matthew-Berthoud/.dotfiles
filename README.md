@@ -48,6 +48,23 @@ neovim, tmux, docker
 
 (Bonus: You can play [Vim Golf](https://www.vimgolf.com) through Docker)
 
+## Languages
+My worst nightmare is having a bunch of miscellaneous installations of various languages lingering around on my computer.
+In order to avoid this, I try to use the most standard, organized ways of installing lanugages.
+
+### Python
+I use Homebrew to install `pyenv`, a version manager and virtual environment manager for python versions.
+It has a pretty simple CLI and seems to cleanly manage things.
+
+### JS and Node
+I use Node Version Manager (`nvm`), installed with Homebrew, to manage my installs of node, and node package manager (`npm`).
+
+### Go
+I directly downloaded and installed the Go binary, which is the recommended method, since go managages updates for itself.
+
+### Bash
+Using the Mac system default.
+
 ## ssh
 So that I don't have to type the password every time when ssh-ing into a machine:
 ```bash
