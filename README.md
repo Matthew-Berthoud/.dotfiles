@@ -63,7 +63,7 @@ I use Node Version Manager (`nvm`), installed with Homebrew, to manage my instal
 I directly downloaded and installed the Go binary, which is the recommended method, since go managages updates for itself.
 
 ### Bash
-Using the Mac system default.
+Installed from brew, since the Mac default is too old for some things.
 
 ## ssh
 So that I don't have to type the password every time when ssh-ing into a machine:
