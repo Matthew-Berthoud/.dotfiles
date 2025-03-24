@@ -5,7 +5,8 @@ brew 'docker'
 brew 'docker-compose'
 brew 'git'
 brew 'git-lfs'
-brew 'kubectl'
+brew 'ko'		# SAMBA
+brew 'kubectl'		# SAMBA
 brew 'minikube'
 brew 'neovim'
 brew 'nvm'
