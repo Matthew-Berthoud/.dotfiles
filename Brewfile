@@ -10,8 +10,9 @@ brew 'tmux'
 brew 'tree'
 brew 'unzip'
 brew 'wget'
-cask 'firefox'
+brew 'pyenv'
 cask 'font-jetbrains-mono-nerd-font'
 cask 'karabiner-elements'
 cask 'unnaturalscrollwheels'
-
+cask 'wireshark'	# CTFs
+cask 'burp-suite'	# CTFs
