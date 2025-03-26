@@ -18,6 +18,7 @@ brew 'unzip'
 brew 'wget'
 cask 'burp-suite'	# CTFs
 cask 'font-jetbrains-mono-nerd-font'
+cask 'ghostty'
 cask 'karabiner-elements'
 cask 'unnaturalscrollwheels'
 cask 'wireshark'	# CTFs

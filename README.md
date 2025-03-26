@@ -36,7 +36,7 @@ I remapped Caps Lock to be Escape when pressed once, and Ctrl when held down. Th
 Karabiner Elements gets installed with Homebrew, and you can add the file in this repo as a Complex Modification to get the remapped behavior.
 
 ## Terminal and Shell
-I use the default Mac Terminal since I don't customize anything about the terminal itself, just what runs in it.
+I use [Ghostty](https://ghostty.org/) since it seems cool and the default Mac terminal has weird issues with Neovim colorscheme.
 I use `bash` instead of `zsh`, since `bash` is more ubiquitous in containers, servers, etc, so it's worth getting used to.
 ```sh
 chsh -s /bin/bash
