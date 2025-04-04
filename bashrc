@@ -1,6 +1,7 @@
 export DOTFILES=$HOME/.dotfiles
 export SCRIPTS=$HOME/.dotfiles/scripts
 export DOCKER_HOST=unix:///Users/$USER/.colima/default/docker.sock
+export PATH=$PATH:$(go env GOPATH)/bin
 
 source "$SCRIPTS/functions.sh"
 
@@ -17,6 +18,8 @@ alias nav="navigate_to_port"
 
 # On my Mac only
 if [ "$(uname)" == "Darwin" ]; then
+    alias v="nvim"
+    alias vi="nvim"
     alias vim="nvim"
 
     alias rmdirr="rm_DS_Store_and_dir"

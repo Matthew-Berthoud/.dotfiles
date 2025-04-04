@@ -20,5 +20,6 @@ cask 'burp-suite'	# CTFs
 cask 'font-jetbrains-mono-nerd-font'
 cask 'ghostty'
 cask 'karabiner-elements'
+cask 'microsoft-powerpoint'
 cask 'unnaturalscrollwheels'
 cask 'wireshark'	# CTFs
