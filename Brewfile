@@ -10,6 +10,7 @@ brew 'kubectl'		# SAMBA
 brew 'minikube'
 brew 'neovim'
 brew 'nvm'
+brew 'pngpaste'
 brew 'pyenv'
 brew 'ripgrep'
 brew 'tmux'
