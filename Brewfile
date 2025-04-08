@@ -19,6 +19,7 @@ brew 'wget'
 cask 'burp-suite'	# CTFs
 cask 'font-jetbrains-mono-nerd-font'
 cask 'ghostty'
+cask 'google-chrome'
 cask 'karabiner-elements'
 cask 'microsoft-powerpoint'
 cask 'unnaturalscrollwheels'
