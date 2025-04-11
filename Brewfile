@@ -23,5 +23,7 @@ cask 'ghostty'
 cask 'google-chrome'
 cask 'karabiner-elements'
 cask 'microsoft-powerpoint'
+cask 'spotify'
 cask 'unnaturalscrollwheels'
 cask 'wireshark'	# CTFs
+cask 'zotero'		# school/research
