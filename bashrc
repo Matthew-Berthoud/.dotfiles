@@ -30,4 +30,10 @@ if [ "$(uname)" == "Darwin" ]; then
     alias fhgp="cd $HOME/Desktop/flat-hat-games-wp-plugin/ && docker compose up -d && nav '8000/wp-admin/admin.php?page=flathat-games'"
     alias gs="make_project_zip sodoh"
     export KO_DOCKER_REPO='ko.local'
+
+    # pyenv initialization
+    export PYENV_ROOT="$HOME/.pyenv"
+    export PATH="$PYENV_ROOT/bin:$PATH"
+    eval "$(pyenv init --path)"
+    eval "$(pyenv init -)"
 fi
