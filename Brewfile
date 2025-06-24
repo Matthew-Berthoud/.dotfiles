@@ -6,6 +6,7 @@ brew 'docker-compose'
 brew 'gh'
 brew 'git'
 brew 'git-lfs'
+brew 'imagemagick'
 brew 'ko'		# SAMBA
 brew 'kubectl'
 brew 'minikube'
@@ -27,7 +28,9 @@ cask 'google-chrome'
 cask 'karabiner-elements'
 cask 'mactex'
 cask 'microsoft-powerpoint'	# school
+cask 'prismlauncher'		# prism minecraft launcher
 cask 'spotify'
 cask 'unnaturalscrollwheels'
 cask 'wireshark'	# CTFs
 cask 'zotero'		# school/research
+cask 'zulu'		# java sdk for minecraft
