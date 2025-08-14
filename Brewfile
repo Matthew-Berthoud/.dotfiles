@@ -32,5 +32,4 @@ cask 'prismlauncher'		# prism minecraft launcher
 cask 'spotify'
 cask 'unnaturalscrollwheels'
 cask 'wireshark'	# CTFs
-cask 'zotero'		# school/research
 cask 'zulu'		# java sdk for minecraft
