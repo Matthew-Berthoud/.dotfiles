@@ -31,5 +31,4 @@ cask 'microsoft-powerpoint'	# school
 cask 'prismlauncher'		# prism minecraft launcher
 cask 'spotify'
 cask 'unnaturalscrollwheels'
-cask 'wireshark'	# CTFs
 cask 'zulu'		# java sdk for minecraft
