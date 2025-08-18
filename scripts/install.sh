@@ -35,6 +35,30 @@ install_xcode_tools() {
         echo "Xcode Command Line Tools already installed"
     fi
 }
+do_brew() {
+    # Install Mac developer tools that Brew depends on
+    # install_xcode_tools
+    
+    # Remove anything installed with brew that isn't in the current Brewfile
+    # brew bundle --force cleanup --file=Brewfile
+
+    # Install what's in the shared Brewfile
+    local shared="$DOTFILES/brew/Brewfile"
+    echo "Brew Bundling from $shared"
+    brew bundle --file "$shared"
+
+    read -p "Is this a work computer? (y/n) " -n 1 -r
+    echo
+    if [[ $REPLY =~ ^[Yy]$ ]]; then
+        local work="$DOTFILES/brew/work.Brewfile"
+        echo "Brew Bundling from $work"
+        brew bundle --file "$work"
+    else
+        local personal="$DOTFILES/brew/personal.Brewfile"
+        echo "Brew Bundling from $personal"
+        brew bundle --file "$personal"
+    fi
+}
 open_or_print_link() {
     if [ "$(uname)" == "Darwin" ]; then
 	open -g $1 # opens in background
@@ -73,14 +97,6 @@ if [ "$(uname)" == "Darwin" ]; then
     fi
     cd "$DOTFILES"
 
-    # Install Mac developer tools that Brew depends on
-    install_xcode_tools
-    
-    # Remove anything installed with brew that isn't in the current Brewfile
-    brew bundle --force cleanup --file=Brewfile
-    # Install what's in the Brewfile
-    brew bundle
-
     # Install Tailscale
     if [ -e "/Applications/Tailscale.app" ]; then
         echo "Tailscale already installed"
@@ -89,6 +105,10 @@ if [ "$(uname)" == "Darwin" ]; then
 	wget -P "$HOME/Downloads" https://pkgs.tailscale.com/stable/Tailscale-latest-macos.pkg
 	open -g -a "Finder" "$HOME/Downloads"
     fi
+
+    
+
+    do_brew
 fi
 
 # Install latest LTS version of Node if nvm exists
