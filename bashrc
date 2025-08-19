@@ -36,3 +36,8 @@ if [ "$(uname)" == "Darwin" ]; then
     eval "$(pyenv init --path)"
     eval "$(pyenv init -)"
 fi
+#
+# Load machine-specific settings if they exist
+if [[ -f ~/.bash_profile.local ]]; then
+  source ~/.bash_profile.local
+fi
