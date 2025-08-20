@@ -11,4 +11,5 @@ cask 'eqmac'
 cask 'mactex'
 cask 'microsoft-powerpoint'	# school
 cask 'prismlauncher'		# prism minecraft launcher
+cask 'spotify'
 cask 'zulu'		# java sdk for minecraft
