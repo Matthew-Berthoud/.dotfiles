@@ -42,20 +42,59 @@ do_brew() {
     # Remove anything installed with brew that isn't in the current Brewfile
     # brew bundle --force cleanup --file=Brewfile
 
-    # Install what's in the shared Brewfile
+
+    # --- SHARED BUNDLE ---
     local shared="$DOTFILES/brew/Brewfile"
     echo "Brew Bundling from $shared"
     brew bundle --file "$shared"
 
-    read -p "Is this a work computer? (y/n) " -n 1 -r
-    echo
-    if [[ $REPLY =~ ^[Yy]$ ]]; then
+    # --- WORK OR PERSONAL BUNDLE ---
+
+    # Determine the correct local file based on the user's shell.
+    # We default to a generic .profile.local if we can't determine the shell.
+    local local_env_file="$HOME/.profile.local"
+    if [[ "$SHELL" == *"zsh"* ]]; then
+        local_env_file="$HOME/.zshrc.local"
+    elif [[ "$SHELL" == *"bash"* ]]; then
+        local_env_file="$HOME/.bash_profile.local"
+    fi
+
+    # Source the local file if it exists, to load the WORK_COMPUTER variable.
+    if [[ -f "$local_env_file" ]]; then
+        source "$local_env_file"
+    fi
+
+    # Now, check if the variable is set. If not, ask the user and create the file.
+    if [[ -z "$WORK_COMPUTER" ]]; then
+        echo "First-time setup: Let's determine the computer type."
+        read -p "Is this a work computer? (y/n) " -n 1 -r
+        echo # New line
+
+        local is_work_computer=false
+        if [[ $REPLY =~ ^[Yy]$ ]]; then
+            is_work_computer=true
+        fi
+
+        echo "Saving your preference to $local_env_file..."
+        # Create or overwrite the local file with the machine-specific setting.
+        # Using a single '>' ensures the file is clean if this script is ever re-run.
+        echo "# Do not commit this file. It is for machine-specific settings." > "$local_env_file"
+        echo "export WORK_COMPUTER=$is_work_computer" >> "$local_env_file"
+
+        # Set the variable for the CURRENT session so the script can complete.
+        export WORK_COMPUTER=$is_work_computer
+
+        echo "✅ Preference saved. You won't be asked this again on this machine."
+    fi
+
+    # Use the WORK_COMPUTER variable to run the correct bundle.
+    if [[ "$WORK_COMPUTER" == "true" ]]; then
         local work="$DOTFILES/brew/work.Brewfile"
-        echo "Brew Bundling from $work"
+        echo "💻 Brew Bundling from $work (Work Computer)"
         brew bundle --file "$work"
     else
         local personal="$DOTFILES/brew/personal.Brewfile"
-        echo "Brew Bundling from $personal"
+        echo "🏠 Brew Bundling from $personal (Personal Computer)"
         brew bundle --file "$personal"
     fi
 }
