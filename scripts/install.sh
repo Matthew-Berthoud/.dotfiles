@@ -36,6 +36,10 @@ install_xcode_tools() {
     fi
 }
 do_brew() {
+    # Install Homebrew if not already
+    if ! which brew &>/dev/null; then
+    	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    fi
     # Install Mac developer tools that Brew depends on
     # install_xcode_tools
     
@@ -128,27 +132,10 @@ echo "Sym-linked these config directories: ${CONFIG_DIRS[*]}"
 
 # Mac only
 if [ "$(uname)" == "Darwin" ]; then
-    # Install Homebrew if not already
-    if ! which brew &>/dev/null; then
-    	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-    else
-	echo "Homebrew already installed"
-    fi
-    cd "$DOTFILES"
-
-    # Install Tailscale
-    if [ -e "/Applications/Tailscale.app" ]; then
-        echo "Tailscale already installed"
-    else
-	echo "Downloading Tailscale. Go to Finder and double click the .pkg file"
-	wget -P "$HOME/Downloads" https://pkgs.tailscale.com/stable/Tailscale-latest-macos.pkg
-	open -g -a "Finder" "$HOME/Downloads"
-    fi
-
-    
-
     do_brew
 fi
+
+open -g -a Tailscale
 
 # Install latest LTS version of Node if nvm exists
 command -v nvm >/dev/null 2>&1 && nvm install --lts --latest-npm
