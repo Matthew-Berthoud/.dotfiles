@@ -2,8 +2,11 @@
 
 _Configuration for Development and Life_
 
-## Goal
-A brand new Mac can be opened up and configured by running a single script (`scripts/install.sh`).
+## Overview
+This repo contains everything you should need to set up a brand new Mac with my development configuration, and the best part is it can all be done by running one script:
+```
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Matthew-Berthoud/.dotfiles/HEAD/scripts/install.sh)"
+```
 
 ## Tailscale
 I have all my devices connected through a [Tailscale](https://tailscale.com) Tailnet. 
