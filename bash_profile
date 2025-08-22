@@ -23,3 +23,8 @@ if [ -f $DOTFILES/scripts/git-completion.bash ]; then
 fi
 
 source ~/.bashrc
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/matthewberthoud/.lmstudio/bin"
+# End of LM Studio CLI section
+

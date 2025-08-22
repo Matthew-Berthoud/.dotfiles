@@ -41,3 +41,8 @@ fi
 if [[ -f ~/.bash_profile.local ]]; then
   source ~/.bash_profile.local
 fi
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/matthewberthoud/.lmstudio/bin"
+# End of LM Studio CLI section
+
