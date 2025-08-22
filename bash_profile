@@ -1,3 +1,5 @@
+#!/bin/bash
+
 if [[ "$(uname)" == "Darwin" ]]; then
 
     # Annoying "zsh is the default shell now, switch to it" type warning
@@ -14,6 +16,10 @@ if [[ "$(uname)" == "Darwin" ]]; then
     [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
     [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
+fi
+
+if [ -f $DOTFILES/scripts/git-completion.bash ]; then
+  . $DOTFILES/scripts/git-completion.bash
 fi
 
 source ~/.bashrc
