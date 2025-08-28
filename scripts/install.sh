@@ -123,7 +123,7 @@ for FILE in "${FILES_TO_LINK[@]}"; do
 done
 echo "Sym-linked these dotfiles: ${FILES_TO_LINK[*]}"
 
-CONFIG_DIRS=("nvim" "tmux" "ghostty" "karabiner")
+CONFIG_DIRS=("nvim" "tmux" "ghostty" "karabiner" "tmuxinator")
 for DIR in "${CONFIG_DIRS[@]}"; do
     rm -rf "$HOME/.config/$DIR"
     ln -sf "$DOTFILES/$DIR" "$HOME/.config/$DIR"
