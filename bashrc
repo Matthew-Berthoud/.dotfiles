@@ -26,11 +26,6 @@ if [ "$(uname)" == "Darwin" ]; then
     alias rmdirr="rm_DS_Store_and_dir"
     alias ddev="bash $DOTFILES/docker-dev/launch.sh"
 
-    # temporary, project-specific
-    alias fhg="nav 5173 && ddev react 5173 5173"
-    alias fhgp="cd $HOME/Desktop/flat-hat-games-wp-plugin/ && docker compose up -d && nav '8000/wp-admin/admin.php?page=flathat-games'"
-    export KO_DOCKER_REPO='ko.local'
-
     # pyenv initialization
     export PYENV_ROOT="$HOME/.pyenv"
     export PATH="$PYENV_ROOT/bin:$PATH"
