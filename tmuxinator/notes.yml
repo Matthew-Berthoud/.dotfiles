@@ -1,5 +1,7 @@
-name: dotfiles
-root: ~/.dotfiles/
+# /Users/matthewberthoud/.config/tmuxinator/notes.yml
+
+name: notes
+root: ~/Desktop/notes
 
 # Optional tmux socket
 # socket_name: foo
@@ -34,7 +36,7 @@ root: ~/.dotfiles/
 # tmux_command: byobu
 
 # Specifies (by name or index) which window will be selected on project startup. If not set, the first window is used.
-startup_window: terminal
+# startup_window: editor
 
 # Specifies (by index) which pane of the specified window will be selected on project startup. If not set, the first pane is used.
 # startup_pane: 1
@@ -43,5 +45,4 @@ startup_window: terminal
 attach: false
 
 windows:
-  - editor: nvim README.md
-  - terminal: git status
+  - editor: nvim ToDoTomorrow.md

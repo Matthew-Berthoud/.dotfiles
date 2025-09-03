@@ -66,3 +66,13 @@ make_project_zip() {
     cd $project_folder && make clean && zip -r $project.zip *
     mv $project.zip $HOME/Downloads/
 }
+
+work() {
+    # WARNING: If you have more than one of these where "attach" is not set to false,
+    # (true is the default) then they will open in series, so you'll only open the
+    # first session, and then when you close it fully the next will open, etc.
+
+    tmuxinator start -p ~/.config/tmuxinator/dotfiles.yml
+    tmuxinator start -p ~/.config/tmuxinator/notes.yml
+    tmuxinator start -p ~/.config/tmuxinator/ndaa.yml
+}
