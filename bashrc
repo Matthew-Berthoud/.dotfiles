@@ -42,3 +42,4 @@ fi
 export PATH="$PATH:/Users/matthewberthoud/.lmstudio/bin"
 # End of LM Studio CLI section
 
+export IGNOREEOF=10
