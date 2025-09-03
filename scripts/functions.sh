@@ -76,3 +76,10 @@ work() {
     tmuxinator start -p ~/.config/tmuxinator/notes.yml
     tmuxinator start -p ~/.config/tmuxinator/ndaa.yml
 }
+
+home() {
+    # WARNING: (see warning in `work` function)
+
+    tmuxinator start -p ~/.config/tmuxinator/dotfiles.yml
+    tmuxinator start -p ~/.config/tmuxinator/site.yml
+}
