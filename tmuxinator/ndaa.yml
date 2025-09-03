@@ -1,0 +1,9 @@
+name: ndaa
+root: ~/repos/odam-ndaa/
+startup_window: terminal
+pre_window:
+  - source .venv/bin/activate
+  - uv sync
+windows:
+- editor: nvim README.md
+- terminal: git status && git branch
