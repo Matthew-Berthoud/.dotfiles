@@ -45,4 +45,5 @@ root: ~/Desktop/notes
 attach: false
 
 windows:
-  - editor: nvim ToDoTomorrow.md
+  - editor: daily
+  - terminal: tree

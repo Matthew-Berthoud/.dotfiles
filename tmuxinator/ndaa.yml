@@ -7,3 +7,4 @@ pre_window:
 windows:
 - editor: nvim README.md
 - terminal: git status && git branch
+- server: make run-ui
