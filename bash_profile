@@ -1,19 +1,14 @@
 #!/bin/bash
 
 if [[ "$(uname)" == "Darwin" ]]; then
+    eval "$(/opt/homebrew/bin/brew shellenv)"
 
     # Annoying "zsh is the default shell now, switch to it" type warning
-	export BASH_SILENCE_DEPRECATION_WARNING=1
-
-    # Homebrew on path
-    eval "$(/opt/homebrew/bin/brew shellenv)"
+    export BASH_SILENCE_DEPRECATION_WARNING=1
 fi
 
 if [[ "$(uname -s)" == "Linux" ]]; then
-    echo "Linux"
-
     eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-
 fi
 
 # nvm (node version manager)

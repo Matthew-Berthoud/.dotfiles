@@ -90,3 +90,6 @@ get_brew_packages
 # Install latest LTS version of Node if nvm exists
 command -v nvm >/dev/null 2>&1 && nvm install --lts --latest-npm
 
+# Pull in submodules of this repo (eg. nvim)
+cd "$DOTFILES" && git submodule init && git pull --recurse-submodule
+
