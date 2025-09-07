@@ -7,24 +7,23 @@ if [[ "$(uname)" == "Darwin" ]]; then
 
     # Homebrew on path
     eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
 
-    # Go on path
-    export PATH=$PATH:/usr/local/go/bin
+if [[ "$(uname -s)" == "Linux" ]]; then
+    echo "Linux"
 
-    # nvm (node version manager)
-    export NVM_DIR="$HOME/.nvm"
-    [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
-    [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 fi
+
+# nvm (node version manager)
+export NVM_DIR="$HOME/.nvm"
+[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 if [ -f $DOTFILES/scripts/git-completion.bash ]; then
   . $DOTFILES/scripts/git-completion.bash
 fi
 
 source ~/.bashrc
-
-# Added by LM Studio CLI (lms)
-export PATH="$PATH:/Users/matthewberthoud/.lmstudio/bin"
-# End of LM Studio CLI section
 

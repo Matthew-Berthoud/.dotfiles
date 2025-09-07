@@ -9,44 +9,7 @@ handle_error() {
     local command="$BASH_COMMAND"
     echo "Error: Command '$command' failed with exit code $exit_code" >&2
 }
-install_xcode_tools() {
-    # Check if Xcode CLT are installed
-    if ! xcode-select -p &>/dev/null; then
-        echo "Starting Xcode Command Line Tools installation..."
-        xcode-select --install
-    
-        # Wait for installer process to exit (user clicks "Done")
-        echo "Monitoring installer progress..."
-        while pgrep -q "Install Command Line Developer Tools"; do
-            sleep 5
-            echo "Installer still running..."
-        done
-    
-        # Verify actual installation completion
-        echo "Verifying system components..."
-        until [ -f /Library/Developer/CommandLineTools/usr/bin/git ] && 
-              [ -d /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk ]; do
-            sleep 5
-            echo "Waiting for components to become available..."
-        done
-    
-        echo "Xcode CLT installation fully completed"
-    else
-        echo "Xcode Command Line Tools already installed"
-    fi
-}
-do_brew() {
-    # Install Homebrew if not already
-    if ! which brew &>/dev/null; then
-    	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-    fi
-    # Install Mac developer tools that Brew depends on
-    # install_xcode_tools
-    
-    # Remove anything installed with brew that isn't in the current Brewfile
-    # brew bundle --force cleanup --file=Brewfile
-
-
+get_brew_packages() {
     # --- SHARED BUNDLE ---
     local shared="$DOTFILES/brew/Brewfile"
     echo "Brew Bundling from $shared"
@@ -102,24 +65,11 @@ do_brew() {
         brew bundle --file "$personal"
     fi
 }
-open_or_print_link() {
-    if [ "$(uname)" == "Darwin" ]; then
-	open -g $1 # opens in background
-	echo "Check your browser."
-    else
-	echo "Here's the link: $1"
-    fi
-}
-prompt_go_install() {
-    echo "Wanna install Go?"
-    open_or_print_link 'https://go.dev/doc/install'
-}
-
-trap 'handle_error' ERR
 
 FILES_TO_LINK=("bash_profile" "bashrc" "vimrc")
 for FILE in "${FILES_TO_LINK[@]}"; do
 	ln -sf "$DOTFILES/$FILE" "$HOME/.$FILE"
+    source "$DOTFILES/$FILE" 
 done
 echo "Sym-linked these dotfiles: ${FILES_TO_LINK[*]}"
 
@@ -130,15 +80,13 @@ for DIR in "${CONFIG_DIRS[@]}"; do
 done
 echo "Sym-linked these config directories: ${CONFIG_DIRS[*]}"
 
-# Mac only
-if [ "$(uname)" == "Darwin" ]; then
-    do_brew
+# Install Homebrew if not already
+if ! which brew &>/dev/null; then
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
-open -g -a Tailscale
+get_brew_packages
 
 # Install latest LTS version of Node if nvm exists
 command -v nvm >/dev/null 2>&1 && nvm install --lts --latest-npm
 
-# Install Go?
-command -v go >/dev/null 2>&1 && echo "Go already installed" || prompt_go_install

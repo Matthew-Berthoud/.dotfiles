@@ -1,23 +1,31 @@
-brew 'bash'
-brew 'curl'
-brew 'gh'
-brew 'git'
-brew 'git-lfs'
-brew 'libxml2'
-brew 'neovim'
-brew 'nvm'
-brew 'pngpaste'
-brew 'pyenv'
-brew 'ripgrep'
-brew 'tmux'
-brew 'tmuxinator'
-brew 'tree'
-brew 'unzip'
-brew 'uv'
-brew 'wget'
-cask 'font-jetbrains-mono-nerd-font'
-cask 'ghostty'
-cask 'google-chrome'
-cask 'karabiner-elements'
-cask 'tailscale-app'
-cask 'unnaturalscrollwheels'
+# Common formulae
+[
+  "bash",
+  "curl",
+  "gh",
+  "git",
+  "git-lfs",
+  "libxml2",
+  "neovim",
+  "nvm",
+  "pyenv",
+  "ripgrep",
+  "tmux",
+  "tmuxinator",
+  "tree",
+  "unzip",
+  "uv",
+  "wget"
+].each { |pkg| brew pkg }
+
+# macOS-only casks
+if OS.mac?
+  [
+    "font-jetbrains-mono-nerd-font",
+    "ghostty",
+    "google-chrome",
+    "karabiner-elements",
+    "tailscale-app",
+    "unnaturalscrollwheels"
+  ].each { |c| cask c }
+end
