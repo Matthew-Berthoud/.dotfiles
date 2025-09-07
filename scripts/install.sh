@@ -3,12 +3,6 @@
 DOTFILES="$HOME/.dotfiles"
 cd "$DOTFILES"
 
-# Functions
-handle_error() {
-    local exit_code=$?
-    local command="$BASH_COMMAND"
-    echo "Error: Command '$command' failed with exit code $exit_code" >&2
-}
 get_brew_packages() {
     # --- SHARED BUNDLE ---
     local shared="$DOTFILES/brew/Brewfile"
@@ -69,7 +63,6 @@ get_brew_packages() {
 FILES_TO_LINK=("bash_profile" "bashrc" "vimrc")
 for FILE in "${FILES_TO_LINK[@]}"; do
 	ln -sf "$DOTFILES/$FILE" "$HOME/.$FILE"
-    source "$DOTFILES/$FILE" 
 done
 echo "Sym-linked these dotfiles: ${FILES_TO_LINK[*]}"
 
@@ -90,6 +83,13 @@ get_brew_packages
 # Install latest LTS version of Node if nvm exists
 command -v nvm >/dev/null 2>&1 && nvm install --lts --latest-npm
 
+# Install latest Python 3.11 LTS if pyenv exists
+if command -v pyenv >/dev/null 2>&1; then
+    LATEST_LTS=$(pyenv install --list | grep -E '^\s*3\.11\.[0-9]+$' | tail -1 | tr -d ' ')
+    pyenv install -s "$LATEST_LTS"
+    pyenv global "$LATEST_LTS"
+fi
+
 # Pull in submodules of this repo (eg. nvim)
-cd "$DOTFILES" && git submodule init && git pull --recurse-submodule
+cd "$DOTFILES" && git submodule init && git pull --recurse-submodule && cd -
 

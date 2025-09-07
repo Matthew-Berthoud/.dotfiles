@@ -8,7 +8,7 @@
   "ko",         # SAMBA
   "kubectl",
   "minikube",
-  "php"         # GDSC
+  "php",        # GDSC
 ].each { |pkg| brew pkg }
 
 # macOS-only casks
