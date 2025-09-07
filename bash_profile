@@ -17,6 +17,19 @@ if [[ "$(uname -s)" == "Linux" ]]; then
     [ -s "/home/linuxbrew/.linuxbrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/home/linuxbrew/.linuxbrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 fi
 
+# Only run in WSL
+if grep -qi "microsoft" /proc/version; then
+    # check if kmonad.exe is already running
+    if ! pgrep -f "kmonad.exe" >/dev/null; then
+        nohup "$DOTFILES/kmonad/windows/kmonad.exe" \
+              "$DOTFILES/kmonad/windows/config.kbd" \
+              >/dev/null 2>&1 &
+        echo "kmonad.exe started."
+    else
+        echo "kmonad.exe already running."
+    fi
+fi
+
 # nvm (node version manager)
 export NVM_DIR="$HOME/.nvm"
 mkdir -p "$NVM_DIR"
