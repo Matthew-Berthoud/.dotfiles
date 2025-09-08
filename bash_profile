@@ -8,25 +8,24 @@ if [[ "$(uname)" == "Darwin" ]]; then
 
     # Annoying "zsh is the default shell now, switch to it" type warning
     export BASH_SILENCE_DEPRECATION_WARNING=1
-fi
 
-if [[ "$(uname -s)" == "Linux" ]]; then
+elif [[ "$(uname -s)" == "Linux" ]]; then
     eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
     [ -s "/home/linuxbrew/.linuxbrew/opt/nvm/nvm.sh" ] && \. "/home/linuxbrew/.linuxbrew/opt/nvm/nvm.sh"  # This loads nvm
     [ -s "/home/linuxbrew/.linuxbrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/home/linuxbrew/.linuxbrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
-fi
 
-# Only run in WSL
-if grep -qi "microsoft" /proc/version; then
-    # check if kmonad.exe is already running
-    if ! pgrep -f "kmonad.exe" >/dev/null; then
-        nohup "$DOTFILES/kmonad/windows/kmonad.exe" \
-              "$DOTFILES/kmonad/windows/config.kbd" \
-              >/dev/null 2>&1 &
-        echo "kmonad.exe started."
-    else
-        echo "kmonad.exe already running."
+    # Only run in WSL
+    if grep -qi "microsoft" /proc/version; then
+        # check if kmonad.exe is already running
+        if ! pgrep -f "kmonad.exe" >/dev/null; then
+            nohup "$DOTFILES/kmonad/windows/kmonad.exe" \
+                  "$DOTFILES/kmonad/windows/config.kbd" \
+                  >/dev/null 2>&1 &
+            echo "kmonad.exe started."
+        else
+            echo "kmonad.exe already running."
+        fi
     fi
 fi
 
