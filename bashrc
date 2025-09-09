@@ -38,3 +38,4 @@ if [[ -f ~/.bash_profile.local ]]; then
 fi
 
 export IGNOREEOF=10
+. "$HOME/.cargo/env"
