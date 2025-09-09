@@ -9,6 +9,10 @@ if [[ "$(uname)" == "Darwin" ]]; then
     # Annoying "zsh is the default shell now, switch to it" type warning
     export BASH_SILENCE_DEPRECATION_WARNING=1
 
+    # Added by LM Studio CLI (lms)
+    export PATH="$PATH:/Users/matthewberthoud/.lmstudio/bin"
+    # End of LM Studio CLI section
+
 elif [[ "$(uname -s)" == "Linux" ]]; then
     eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
