@@ -44,4 +44,4 @@ attach: false
 
 windows:
   - editor: nvim README.md
-  - terminal: git status
+  - terminal: dotgit && dotrun && tree
