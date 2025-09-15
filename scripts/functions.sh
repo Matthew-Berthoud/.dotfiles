@@ -151,7 +151,6 @@ dotgit() {
     echo "--- Syncing nvim config ---"
     cd "$DOTFILES/nvim"
     git pull
-    git diff
     git add .
     # The `|| true` prevents the script from exiting if there's nothing to commit
     git commit -m "Updated dotfiles." || true
@@ -160,7 +159,6 @@ dotgit() {
     echo "--- Syncing main dotfiles ---"
     cd "$DOTFILES"
     git pull
-    git diff
     git add .
     git commit -m "Updated dotfiles." || true
     git push
