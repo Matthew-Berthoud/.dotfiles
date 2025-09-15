@@ -91,8 +91,9 @@ if command -v pyenv >/dev/null 2>&1; then
 fi
 
 # Pull in submodules of this repo (eg. nvim)
-cd "$DOTFILES" && git submodule init && git pull --recurse-submodule && cd -
+cd "$DOTFILES" && git submodule init && git pull --recurse-submodule && cd - > /dev/null 2>&1
 
 # install rust
 command -v rustc >/dev/null 2>&1 || curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
 
+source ~/.bash_profile

@@ -1,3 +1,5 @@
+echo "Running .bashrc"
+
 export EDITOR='nvim'
 export DOTFILES=$HOME/.dotfiles
 export SCRIPTS=$HOME/.dotfiles/scripts
@@ -14,7 +16,8 @@ alias ls="ls --color"
 alias la="ls -lah --color"
 
 alias dot="cd $DOTFILES"
-alias rundot="/bin/bash $SCRIPTS/install.sh"
+alias dotrun="$SCRIPTS/install.sh"
+alias dotgit="dotgit"
 alias nav="navigate_to_port"
 
 alias v="nvim"

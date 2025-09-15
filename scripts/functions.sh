@@ -143,3 +143,27 @@ daily() {
     # The '+2' command moves the cursor to line 2, right under the # TODO heading.
     nvim +2 "$todays_note_file"
 }
+
+dotgit() {
+    # Exit immediately if a command exits with a non-zero status.
+    set -e
+
+    echo "--- Syncing nvim config ---"
+    cd "$DOTFILES/nvim"
+    git pull
+    git add .
+    # The `|| true` prevents the script from exiting if there's nothing to commit
+    git commit -m "Updated dotfiles." || true
+    git push
+
+    echo "--- Syncing main dotfiles ---"
+    cd "$DOTFILES"
+    git pull
+    git add .
+    git commit -m "Updated dotfiles." || true
+    git push
+
+    # Unset the -e option if you don't want it affecting other parts of your shell
+    set +e
+    echo "✅ All dotfiles synced successfully."
+}
