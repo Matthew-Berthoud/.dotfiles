@@ -46,4 +46,3 @@ root: ~/Desktop/notes
 
 windows:
   - editor: daily
-  - terminal: tree
