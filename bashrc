@@ -16,7 +16,7 @@ alias ls="ls --color"
 alias la="ls -lah --color"
 
 alias dot="cd $DOTFILES"
-alias dotrun="$SCRIPTS/install.sh"
+alias dotrun="source $SCRIPTS/install.sh"
 alias dotgit="dotgit"
 alias nav="navigate_to_port"
 alias treedme="tree -a --gitignore -I ".git/" --noreport | pbcopy"
