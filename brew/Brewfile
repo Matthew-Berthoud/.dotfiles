@@ -26,6 +26,7 @@ if OS.mac?
     "ghostty",
     "google-chrome",
     "karabiner-elements",
+    "microsoft-excel",
     "tailscale-app",
     "unnaturalscrollwheels"
   ].each { |c| cask c }
