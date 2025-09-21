@@ -1,7 +1,7 @@
 # /Users/mwberthoud/.config/tmuxinator/site.yml
 
 name: site
-root: ~/repos/personal-vibesite/
+root: ~/repos/site/
 
 # Optional tmux socket
 # socket_name: foo
