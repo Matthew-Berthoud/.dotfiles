@@ -20,6 +20,7 @@ if OS.mac?
     "microsoft-powerpoint",      # school
     "prismlauncher",             # prism minecraft launcher
     "spotify",
+    "zotero",                    # research
     "zulu"                       # java sdk for minecraft
   ].each { |c| cask c }
 end
