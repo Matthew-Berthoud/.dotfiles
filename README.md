@@ -3,10 +3,7 @@
 _Configuration for Development and Life_
 
 ## Overview
-This repo contains everything you should need to set up a brand new Mac with my development configuration, and the best part is it can all be done by running one script:
-```
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Matthew-Berthoud/.dotfiles/HEAD/scripts/install.sh)"
-```
+This repo contains everything you should need to set up a brand new Mac with my development configuration. I use Neovim inside of Tmux, and manage as many dependencies as I can with Homebrew. If that sounds like your kind of environment, read on!
 
 ## Tailscale
 I have all my devices connected through a [Tailscale](https://tailscale.com) Tailnet. 
