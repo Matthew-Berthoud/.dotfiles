@@ -74,8 +74,9 @@ work() {
 
     tmuxinator start -p ~/.config/tmuxinator/dotfiles.yml
     tmuxinator start -p ~/.config/tmuxinator/notes.yml
-    # tmuxinator start -p ~/.config/tmuxinator/ndaa.yml
     tmuxinator start -p ~/.config/tmuxinator/ngrer.yml
+    tmuxinator start -p ~/.config/tmuxinator/ndaa.yml
+    tmuxinator start -p ~/.config/tmuxinator/ai-tools.yml
 }
 
 home() {
