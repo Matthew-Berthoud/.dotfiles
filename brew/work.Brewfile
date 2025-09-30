@@ -7,7 +7,8 @@
 if OS.mac?
   [
     "docker-desktop",
-    "lm-studio"
+    "lm-studio",
+    "slack"
   ].each { |c| cask c }
 end
 

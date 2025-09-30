@@ -43,3 +43,8 @@ fi
 
 export IGNOREEOF=10
 . "$HOME/.cargo/env"
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/matthewberthoud/.lmstudio/bin"
+# End of LM Studio CLI section
+
