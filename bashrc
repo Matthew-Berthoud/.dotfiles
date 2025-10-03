@@ -19,7 +19,7 @@ alias dot="cd $DOTFILES"
 alias dotrun="source $SCRIPTS/install.sh"
 alias dotgit="dotgit"
 alias nav="navigate_to_port"
-alias treedme="tree -a --gitignore -I ".git/" --noreport | pbcopy"
+alias treedme="tree -a --gitignore --dirsfirst -I ".git/" --noreport | pbcopy"
 
 alias v="nvim"
 alias vi="nvim"
