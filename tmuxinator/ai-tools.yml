@@ -1,7 +1,7 @@
 # /Users/matthewberthoud/.config/tmuxinator/ai-tools.yml
 
 name: ai-tools
-root: ~/repos/odam-ndaa/submodules/ai_tools/
+root: "$WORK_REPOS/odam-ndaa/submodules/ai_tools/"
 
 # Optional tmux socket
 # socket_name: foo

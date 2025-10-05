@@ -1,6 +1,10 @@
 echo "Running .bashrc"
 
 export EDITOR='nvim'
+
+export REPOS=$HOME/repos
+export PERSONAL_REPOS=$REPOS/personal
+export WORK_REPOS=$REPOS/black-cape
 export DOTFILES=$HOME/.dotfiles
 export SCRIPTS=$HOME/.dotfiles/scripts
 export DOCKER_HOST=unix:///Users/$USER/.colima/default/docker.sock

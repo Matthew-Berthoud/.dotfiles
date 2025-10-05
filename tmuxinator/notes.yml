@@ -1,7 +1,7 @@
 # /Users/matthewberthoud/.config/tmuxinator/notes.yml
 
 name: notes
-root: ~/Desktop/notes
+root: ~/Desktop/black-cape/notes
 
 # Optional tmux socket
 # socket_name: foo

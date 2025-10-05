@@ -1,6 +1,6 @@
 name: ndaa
 attach: false
-root: ~/repos/odam-ndaa/
+root: "$WORK_REPOS/odam-ndaa/"
 startup_window: terminal
 pre_window:
   - source .venv/bin/activate

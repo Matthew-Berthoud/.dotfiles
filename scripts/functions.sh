@@ -87,7 +87,7 @@ home() {
 daily() {
     # 1. Setup: Define paths and filenames
     # ----------------------------------------------------
-    local notes_dir="$HOME/Desktop/notes/daily"
+    local notes_dir="$HOME/Desktop/black-cape/notes/daily"
     mkdir -p "$notes_dir" # Ensure the directory exists
 
     local todays_note_file="$notes_dir/$(date +'%Y-%m-%d').md"
