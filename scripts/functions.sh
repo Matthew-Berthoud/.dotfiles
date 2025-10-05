@@ -72,7 +72,7 @@ work() {
 	bash $AUTO_TMUX/notes.sh
 	bash $AUTO_TMUX/ngrer.sh
 
-	tmux a -s ngrer
+	tmux a -t ngrer
 }
 
 daily() {
