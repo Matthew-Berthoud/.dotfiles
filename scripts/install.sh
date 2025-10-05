@@ -9,7 +9,7 @@ get_brew_packages() {
     echo "Brew Bundling from $shared"
     brew bundle --file "$shared"
 
-    # --- WORK OR PERSONAL BUNDLE ---
+    # --- WORK BUNDLE ---
 
     # Determine the correct local file based on the user's shell.
     # We default to a generic .profile.local if we can't determine the shell.
@@ -51,12 +51,8 @@ get_brew_packages() {
     # Use the WORK_COMPUTER variable to run the correct bundle.
     if [[ "$WORK_COMPUTER" == "true" ]]; then
         local work="$DOTFILES/brew/work.Brewfile"
-        echo "💻 Brew Bundling from $work (Work Computer)"
+        echo "💻 Brew Bundling $work (Work Computer)"
         brew bundle --file "$work"
-    else
-        local personal="$DOTFILES/brew/personal.Brewfile"
-        echo "🏠 Brew Bundling from $personal (Personal Computer)"
-        brew bundle --file "$personal"
     fi
 }
 

@@ -1,13 +1,22 @@
 # Common formulae
 [
   "bash",
+  "colima",
   "curl",
+  "docker",
+  "docker-compose",
   "gh",
   "git",
   "git-lfs",
+  "golang",
+  "imagemagick",
+  "ko",         # SAMBA
+  "kubectl",
   "libxml2",
+  "minikube",
   "neovim",
   "nvm",
+  "php",        # GDSC
   "pyenv",
   "ripgrep",
   "rustup",
@@ -16,18 +25,23 @@
   "tree",
   "unzip",
   "uv",
-  "wget"
+  "wget",
 ].each { |pkg| brew pkg }
 
 # macOS-only casks
 if OS.mac?
   [
+    "eqmac",
     "font-jetbrains-mono-nerd-font",
     "ghostty",
     "google-chrome",
     "karabiner-elements",
     "microsoft-excel",
+    "prismlauncher",             # prism minecraft launcher
+    "spotify",
     "tailscale-app",
-    "unnaturalscrollwheels"
+    "unnaturalscrollwheels",
+    "zotero",                    # research
+    "zulu",                      # java sdk for minecraft
   ].each { |c| cask c }
 end
