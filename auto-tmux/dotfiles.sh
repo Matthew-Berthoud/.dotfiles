@@ -1,25 +1,19 @@
 #!/bin/bash
 
-# Define session name and the root directory
-SESSION_NAME="dotfiles"
-SESSION_ROOT="$HOME/.dotfiles"
+SESH="dotfiles"
+DIR="$HOME/.dotfiles"
 
-# Check if the session already exists. If it does, do nothing.
-# The '2>/dev/null' part suppresses the "can't find session" error message.
-if ! tmux has-session -t "$SESSION_NAME" 2>/dev/null; then
+tmux has-session -t $SESH 2>/dev/null
 
-    # -d: detached mode
-    # -s: session name
-    # -n: window name
-    # -c: starting directory
+if [ $? != 0 ]; then
+	tmux new-session -d -s $SESH -n "editor" -c $DIR
 
-    tmux new-session -d -s "$SESSION_NAME" -n editor -c "$SESSION_ROOT" "nvim README.md"
-    tmux new-window -t "$SESSION_NAME" -n terminal -c "$SESSION_ROOT" \
-        "bash -c 'source ~/.bashrc && dotgit && dotrun && tree'"
+	tmux send-keys -t $SESH:editor "cd $DIR" C-m
+	tmux send-keys -t $SESH:editor "nvim ." C-m
 
-    tmux select-window -t "$SESSION_NAME:terminal"
+	tmux new-window -t $SESH -n "terminal"
+	tmux send-keys -t $SESH:terminal "cd $DIR" C-m
+	tmux send-keys -t $SESH:terminal "dotgit && dotrun && tree -L 1" C-m
 
-    echo "Tmux session '$SESSION_NAME' created."
-else
-    echo "Tmux session '$SESSION_NAME' already exists."
+	tmux select-window -t $SESH:terminal
 fi
