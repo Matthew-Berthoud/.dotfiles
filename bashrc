@@ -1,14 +1,17 @@
+#!/bin/bash
+
 echo "Running .bashrc"
 
 export EDITOR='nvim'
+export DOCKER_HOST=unix:///Users/$USER/.colima/default/docker.sock
+export PATH=$PATH:$(go env GOPATH)/bin
 
 export REPOS=$HOME/repos
 export PERSONAL_REPOS=$REPOS/personal
 export WORK_REPOS=$REPOS/black-cape
 export DOTFILES=$HOME/.dotfiles
-export SCRIPTS=$HOME/.dotfiles/scripts
-export DOCKER_HOST=unix:///Users/$USER/.colima/default/docker.sock
-export PATH=$PATH:$(go env GOPATH)/bin
+export SCRIPTS=$DOTFILES/scripts
+export AUTO_TMUX=$DOTFILES/auto-tmux
 
 source "$SCRIPTS/functions.sh"
 
@@ -20,10 +23,11 @@ alias ls="ls --color"
 alias la="ls -lah --color"
 
 alias dot="cd $DOTFILES"
-alias dotrun="source $SCRIPTS/install.sh"
+alias dotrun="bash $SCRIPTS/install.sh && source $HOME/.bash_profile"
 alias dotgit="dotgit"
 alias nav="navigate_to_port"
 alias treedme="tree -a --gitignore --dirsfirst -I ".git/" --noreport | pbcopy"
+alias cssbattle="pbpaste | python $SCRIPTS/cssbattle_condenser.py | pbcopy"
 
 alias v="nvim"
 alias vi="nvim"

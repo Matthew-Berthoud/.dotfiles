@@ -91,5 +91,3 @@ cd "$DOTFILES" && git submodule init && git pull --recurse-submodule && cd - > /
 
 # install rust
 command -v rustc >/dev/null 2>&1 || curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
-
-source ~/.bash_profile
