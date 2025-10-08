@@ -1,0 +1,8 @@
+[user]
+	name = Matthew Berthoud
+	email = matthewberthoud@gmail.com
+[init]
+	defaultBranch = main
+
+[includeIf "gitdir:~/repos/black-cape/"]
+	path = ~/.gitconfig-work

@@ -56,7 +56,7 @@ get_brew_packages() {
     fi
 }
 
-FILES_TO_LINK=("bash_profile" "bashrc" "vimrc")
+FILES_TO_LINK=("bash_profile" "bashrc" "vimrc" "gitconfig" "gitconfig-work")
 for FILE in "${FILES_TO_LINK[@]}"; do
 	ln -sf "$DOTFILES/$FILE" "$HOME/.$FILE"
 done
