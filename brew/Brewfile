@@ -13,6 +13,7 @@
   "ko",         # SAMBA
   "kubectl",
   "libxml2",
+  "mas",        # Mac App Store
   "minikube",
   "neovim",
   "nvm",
