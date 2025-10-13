@@ -2,22 +2,20 @@
 
 colorful_ps1() {
     reset='\[\033[0m\]'
-    black='\[\033[30m\]'
     red='\[\033[31m\]'
     green='\[\033[32m\]'
     yellow='\[\033[33m\]'
     blue='\[\033[34m\]'
-    white='\[\033[37m\]'
-
-    local venv_name=""
-    if [ -n "$VIRTUAL_ENV" ]; then
-        venv_name="${red}($(basename "$VIRTUAL_ENV"))${reset} "
-    fi
 
     local dir="${blue}\w${reset}"
-    local branch="${yellow}$(__git_ps1)${reset}"
 
-    echo "${venv_name}${dir}${branch}\$ "
+    local branch=""
+    local current_branch=$(__git_ps1 " %s")
+    if [ -n "$current_branch" ] ; then
+        branch="${yellow}$current_branch${reset}"
+    fi
+
+    echo "${dir}${branch}\$ "
 }
 
 rm_DS_Store_and_dir() {
