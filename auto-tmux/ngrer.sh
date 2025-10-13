@@ -13,7 +13,7 @@ if [ $? != 0 ]; then
 
 	tmux new-window -t $SESH -n "terminal"
 	tmux send-keys -t $SESH:terminal "cd $DIR && source .venv/bin/activate && uv sync " C-m
-	tmux send-keys -t $SESH:terminal "git status && git branch" C-m
+	tmux send-keys -t $SESH:terminal "git status" C-m
 
 	tmux new-window -t $SESH -n "jupyter"
 	tmux send-keys -t $SESH:jupyter "cd $DIR && source .venv/bin/activate && uv sync " C-m
