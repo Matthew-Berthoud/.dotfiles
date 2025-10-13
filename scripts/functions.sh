@@ -7,18 +7,17 @@ colorful_ps1() {
     green='\[\033[32m\]'
     yellow='\[\033[33m\]'
     blue='\[\033[34m\]'
-    magenta='\[\033[35m\]'
-    cyan='\[\033[36m\]'
     white='\[\033[37m\]'
 
-    user="${magenta}\u${reset}"
-    host="${yellow}\h${reset}"
-    dir="${cyan}\w${reset}"
-
-    if [ -n "${CONTAINER_HOSTNAME}" ]; then
-        host="${yellow}$CONTAINER_HOSTNAME${reset}"
+    local venv_name=""
+    if [ -n "$VIRTUAL_ENV" ]; then
+        venv_name="${red}($(basename "$VIRTUAL_ENV"))${reset} "
     fi
-    echo "${user}@${host}:${dir}\$ "
+
+    local dir="${blue}\w${reset}"
+    local branch="${yellow}$(__git_ps1)${reset}"
+
+    echo "${venv_name}${dir}${branch}\$ "
 }
 
 rm_DS_Store_and_dir() {

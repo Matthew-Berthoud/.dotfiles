@@ -41,10 +41,6 @@ mkdir -p "$NVM_DIR"
 [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
 [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
-if [ -f $DOTFILES/scripts/git-completion.bash ]; then
-  . $DOTFILES/scripts/git-completion.bash
-fi
-
 source ~/.bashrc
 
 . "$HOME/.cargo/env"

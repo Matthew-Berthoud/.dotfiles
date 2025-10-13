@@ -14,6 +14,8 @@ export SCRIPTS=$DOTFILES/scripts
 export AUTO_TMUX=$DOTFILES/auto-tmux
 
 source "$SCRIPTS/functions.sh"
+source "$SCRIPTS/git-completion.bash"
+source "$SCRIPTS/git-prompt.sh"
 
 set -o vi
 
