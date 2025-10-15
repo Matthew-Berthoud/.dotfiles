@@ -1,6 +1,6 @@
 #!/bin/bash
 
-SESH="ngrer"
+SESH="atoms-ui"
 DIR="$WORK_REPOS/ATOMS/chronicle-ui"
 
 tmux has-session -t $SESH 2>/dev/null
