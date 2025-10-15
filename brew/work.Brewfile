@@ -1,6 +1,7 @@
 # Common formulae
 [
-  "awscli"
+  "awscli",
+  "gemini-cli",
 ].each { |pkg| brew pkg }
 
 # macOS-only casks
@@ -8,7 +9,7 @@ if OS.mac?
   [
     "docker-desktop",
     "lm-studio",
-    "slack"
+    "slack",
   ].each { |c| cask c }
 end
 

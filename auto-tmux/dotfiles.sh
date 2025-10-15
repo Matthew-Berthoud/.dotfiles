@@ -15,5 +15,9 @@ if [ $? != 0 ]; then
 	tmux send-keys -t $SESH:terminal "cd $DIR" C-m
 	tmux send-keys -t $SESH:terminal "dotgit && dotrun && tree -L 1" C-m
 
+	tmux new-window -t $SESH -n "gemini"
+	tmux send-keys -t $SESH:gemini "cd $DIR" C-m
+	tmux send-keys -t $SESH:gemini "gemini" C-m
+
 	tmux select-window -t $SESH:terminal
 fi

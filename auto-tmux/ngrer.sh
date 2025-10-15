@@ -15,6 +15,10 @@ if [ $? != 0 ]; then
 	tmux send-keys -t $SESH:terminal "cd $DIR && source .venv/bin/activate && uv sync " C-m
 	tmux send-keys -t $SESH:terminal "git status" C-m
 
+	tmux new-window -t $SESH -n "gemini"
+	tmux send-keys -t $SESH:gemini "cd $DIR && source .venv/bin/activate && uv sync " C-m
+	tmux send-keys -t $SESH:gemini "gemini" C-m
+
 	tmux new-window -t $SESH -n "jupyter"
 	tmux send-keys -t $SESH:jupyter "cd $DIR && source .venv/bin/activate && uv sync " C-m
 	tmux send-keys -t $SESH:jupyter "jupyter notebook" C-m
