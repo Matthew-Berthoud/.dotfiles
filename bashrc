@@ -3,7 +3,6 @@
 echo "Running .bashrc"
 
 export EDITOR='nvim'
-export DOCKER_HOST=unix:///Users/$USER/.colima/default/docker.sock
 export PATH=$PATH:$(go env GOPATH)/bin
 
 export REPOS=$HOME/repos

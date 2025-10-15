@@ -1,7 +1,6 @@
 # Common formulae
 [
   "bash",
-  "colima",
   "curl",
   "docker",
   "docker-compose",
@@ -31,6 +30,7 @@
 # macOS-only casks
 if OS.mac?
   [
+    "docker-desktop",
     "eqmac",
     "font-jetbrains-mono-nerd-font",
     "ghostty",

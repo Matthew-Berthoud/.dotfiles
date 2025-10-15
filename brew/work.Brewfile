@@ -7,7 +7,6 @@
 # macOS-only casks
 if OS.mac?
   [
-    "docker-desktop",
     "lm-studio",
     "slack",
   ].each { |c| cask c }
