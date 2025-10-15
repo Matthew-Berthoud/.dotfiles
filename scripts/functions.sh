@@ -12,7 +12,7 @@ colorful_ps1() {
     local branch=""
     local current_branch=$(__git_ps1 " %s")
     if [ -n "$current_branch" ] ; then
-        branch="${yellow}$current_branch${reset}"
+        branch="${yellow}${current_branch}${reset}"
     fi
 
     echo "${dir}${branch}\$ "
@@ -67,9 +67,9 @@ make_project_zip() {
 work() {
 	bash $AUTO_TMUX/dotfiles.sh
 	bash $AUTO_TMUX/notes.sh
-	bash $AUTO_TMUX/ngrer.sh
+	bash $AUTO_TMUX/atoms-ui.sh
 
-	tmux a -t ngrer
+	tmux a -t atoms-ui
 }
 
 daily() {

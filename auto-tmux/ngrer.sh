@@ -1,7 +1,7 @@
 #!/bin/bash
 
 SESH="ngrer"
-DIR="$WORK_REPOS/ngrer"
+DIR="$WORK_REPOS/CDAO/ngrer"
 
 tmux has-session -t $SESH 2>/dev/null
 
