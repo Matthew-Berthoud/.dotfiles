@@ -74,61 +74,32 @@ work() {
 
 daily() {
     # 1. Setup: Define paths and filenames
-    # ----------------------------------------------------
     local notes_dir="$HOME/Desktop/black-cape/notes/daily"
     mkdir -p "$notes_dir" # Ensure the directory exists
 
     local todays_note_file="$notes_dir/$(date +'%Y-%m-%d').md"
 
-
     # 2. Early exit: If today's note already exists, just open it.
-    # -------------------------------------------------------------------
     if [ -f "$todays_note_file" ]; then
         echo "Opening existing note for today."
         nvim "$todays_note_file"
         return
     fi
 
-
-    # 3. Find source note: Find the most recent note.
-    # -----------------------------------------------------------------------
+    # 3. Find source note, carry over tasks
     local source_note=$(ls -t "$notes_dir"/*.md 2>/dev/null | head -n 1)
 
     if [ -n "$source_note" ]; then
-        echo "Found previous note: $(basename "$source_note"). Checking for tasks..."
+        echo "Found previous note: $(basename "$source_note"). Carrying over tasks..."
+        # If a source note exists, copy everything from the start of the
+        # file up to and including the '# DONE' line to the new note.
+        sed '/^# DONE/q' "$source_note" > "$todays_note_file"
     else
         echo "No previous notes found. Creating a fresh daily note."
-    fi
-
-
-    # 4. Extract tasks & create note: Pull unfinished tasks from the source.
-    # ----------------------------------------------------------------------
-    local carry_over_tasks=""
-    if [ -n "$source_note" ]; then
-        # This command finds lines between '# TODO' and '# DONE',
-        # removes blank lines, and filters out completed tasks '[x]'.
-        carry_over_tasks=$(sed -n '/^# TODO/,/^# DONE/p' "$source_note" | sed '1d;$d' | grep -v '\[x\]' | sed '/^$/d')
-    fi
-
-    # Create the new note file with the correct content
-    if [ -n "$carry_over_tasks" ]; then
-        echo "Carrying over unfinished tasks."
-        {
-            echo "# TODO"
-            echo "$carry_over_tasks"
-            echo ""
-            echo "# DONE"
-        } > "$todays_note_file"
-    else
-        # If no tasks to carry over, create a blank note
         echo -e "# TODO\n\n# DONE" > "$todays_note_file"
     fi
 
-
-    # 5. Open in neovim: Open the new note and place the cursor.
-    # ---------------------------------------------------------------
-    # The '+2' command moves the cursor to line 2, right under the # TODO heading.
-    nvim +2 "$todays_note_file"
+    nvim "$todays_note_file"
 }
 
 dotgit() {
