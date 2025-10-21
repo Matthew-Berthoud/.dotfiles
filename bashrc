@@ -17,7 +17,7 @@ set -o vi
 source "$SCRIPTS/functions.sh"
 source "$SCRIPTS/git-completion.bash"
 
-. ~$SCRIPTS/.git-prompt.sh
+. "$SCRIPTS/.git-prompt.sh"
 PROMPT_COMMAND='__git_ps1 "\w" "\\\$ "'
 
 alias ls="ls --color"
