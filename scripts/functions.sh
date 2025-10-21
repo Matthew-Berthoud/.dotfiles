@@ -65,11 +65,12 @@ make_project_zip() {
 }
 
 work() {
-	bash $AUTO_TMUX/dotfiles.sh
-	bash $AUTO_TMUX/notes.sh
-	bash $AUTO_TMUX/atoms-ui.sh
+    bash $AUTO_TMUX/dotfiles.sh
+    bash $AUTO_TMUX/notes.sh
+    bash $AUTO_TMUX/atoms-ui.sh
+    bash $AUTO_TMUX/cdao-ngrer.sh
 
-	tmux a -t atoms-ui
+    tmux a -t ATOMS-ui
 }
 
 daily() {

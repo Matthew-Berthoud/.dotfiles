@@ -1,6 +1,6 @@
 #!/bin/bash
 
-SESH="ngrer"
+SESH="CDAO-NGRER"
 DIR="$WORK_REPOS/CDAO/ngrer"
 
 tmux has-session -t $SESH 2>/dev/null
@@ -21,7 +21,7 @@ if [ $? != 0 ]; then
 
 	tmux new-window -t $SESH -n "jupyter"
 	tmux send-keys -t $SESH:jupyter "cd $DIR && source .venv/bin/activate && uv sync " C-m
-	tmux send-keys -t $SESH:jupyter "jupyter notebook" C-m
+	# tmux send-keys -t $SESH:jupyter "jupyter notebook" C-m
 
 	tmux select-window -t $SESH:terminal
 fi
