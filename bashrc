@@ -17,7 +17,9 @@ set -o vi
 source "$SCRIPTS/functions.sh"
 source "$SCRIPTS/git-completion.bash"
 source "$SCRIPTS/git-prompt.sh"
-PROMPT_COMMAND='__git_ps1 "\w" "\\\$ "'
+BLUE='\[\e[0;34m\]'
+RESET='\[\e[0m\]'
+PROMPT_COMMAND='__git_ps1 "${BLUE}\w${RESET}" "\\\$ "'
 
 alias ls="ls --color"
 alias la="ls -lah --color"
