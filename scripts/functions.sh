@@ -1,23 +1,5 @@
 #!/bin/bash
 
-colorful_ps1() {
-    reset='\[\033[0m\]'
-    red='\[\033[31m\]'
-    green='\[\033[32m\]'
-    yellow='\[\033[33m\]'
-    blue='\[\033[34m\]'
-
-    local dir="${blue}\w${reset}"
-
-    local branch=""
-    local current_branch=$(__git_ps1 " %s")
-    if [ -n "$current_branch" ] ; then
-        branch="${yellow}${current_branch}${reset}"
-    fi
-
-    echo "${dir}${branch}\$ "
-}
-
 rm_DS_Store_and_dir() {
     output=$(rmdir $1 2>&1)
     if [ $? -eq 0 ]; then

@@ -12,13 +12,13 @@ export DOTFILES=$HOME/.dotfiles
 export SCRIPTS=$DOTFILES/scripts
 export AUTO_TMUX=$DOTFILES/auto-tmux
 
-source "$SCRIPTS/functions.sh"
-source "$SCRIPTS/git-completion.bash"
-source "$SCRIPTS/git-prompt.sh"
-
 set -o vi
 
-PS1=$(colorful_ps1)
+source "$SCRIPTS/functions.sh"
+source "$SCRIPTS/git-completion.bash"
+
+. ~$SCRIPTS/.git-prompt.sh
+PROMPT_COMMAND='__git_ps1 "\w" "\\\$ "'
 
 alias ls="ls --color"
 alias la="ls -lah --color"
