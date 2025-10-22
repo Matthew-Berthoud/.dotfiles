@@ -15,10 +15,6 @@ if [ $? != 0 ]; then
 	tmux send-keys -t $SESH:terminal "cd $DIR" C-m
 	tmux send-keys -t $SESH:terminal "git status" C-m
 
-	tmux new-window -t $SESH -n "gemini"
-	tmux send-keys -t $SESH:gemini "cd $DIR" C-m
-	tmux send-keys -t $SESH:gemini "gemini" C-m
-
 	tmux new-window -t $SESH -n "server"
 	tmux send-keys -t $SESH:server "cd $DIR" C-m
 	tmux send-keys -t $SESH:server "npm install" C-m
