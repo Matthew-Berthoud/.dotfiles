@@ -18,6 +18,7 @@
   "nvm",
   "php",        # GDSC
   "pyenv",
+  "rbenv",
   "ripgrep",
   "rustup",
   "tmux",

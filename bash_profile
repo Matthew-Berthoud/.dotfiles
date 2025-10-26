@@ -44,3 +44,6 @@ mkdir -p "$NVM_DIR"
 source ~/.bashrc
 
 . "$HOME/.cargo/env"
+
+# Added by `rbenv init` on Sat Oct 25 00:54:49 EDT 2025
+eval "$(rbenv init - --no-rehash bash)"
