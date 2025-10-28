@@ -38,6 +38,7 @@ if OS.mac?
     "google-chrome",
     "karabiner-elements",
     "microsoft-excel",
+    "nikitabobko/tap/aerospace", # window manager
     "prismlauncher",             # prism minecraft launcher
     "spotify",
     "tailscale-app",
