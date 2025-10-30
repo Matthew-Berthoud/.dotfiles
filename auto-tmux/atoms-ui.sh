@@ -20,11 +20,5 @@ if [ $? != 0 ]; then
 	tmux send-keys -t $SESH:server "npm install" C-m
 	tmux send-keys -t $SESH:server "npm run start" C-m
 
-	tmux new-window -t $SESH -n "unit-tests"
-	tmux send-keys -t $SESH:unit-tests "cd $DIR" C-m
-	
-	tmux new-window -t $SESH -n "cypress"
-	tmux send-keys -t $SESH:cypress "cd $DIR" C-m
-
 	tmux select-window -t $SESH:terminal
 fi
