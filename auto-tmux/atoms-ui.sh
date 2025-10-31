@@ -19,7 +19,7 @@ if [ $? != 0 ]; then
 	tmux new-window -t $SESH -n "server" -c "$UI_DIR"
 	tmux split-window -v -t $SESH:server.1 -c "$API_DIR"
 	tmux send-keys -t $SESH:server.2 "cd $API_DIR && docker desktop start && make dockerrefresh &" C-m
-	tmux send-keys -t $SESH:server.1 "npm install && npm run start" C-m
+	tmux send-keys -t $SESH:server.1 "npm ci && npm run start" C-m
 	tmux send-keys -t $SESH:server.2 "docker desktop start && make dockerrefresh &" C-m
 
 	tmux select-window -t $SESH:terminal
