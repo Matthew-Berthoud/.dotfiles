@@ -1,3 +1,6 @@
+# Add Taps
+tap "sdkman/tap"
+
 # Common formulae
 [
   "awscli",
