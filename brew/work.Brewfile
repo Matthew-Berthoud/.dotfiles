@@ -1,5 +1,7 @@
 # Add Taps
-tap "sdkman/tap"
+[
+  "sdkman/tap",
+].each { |t| tap t }
 
 # Common formulae
 [
