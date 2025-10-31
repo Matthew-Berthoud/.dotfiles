@@ -9,6 +9,7 @@
   "gemini-cli",
   "go-task",
   "poetry",     # python package management
+  "sdkman-cli", # java stuff for OMS-bridge
 ].each { |pkg| brew pkg }
 
 # macOS-only casks
