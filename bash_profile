@@ -5,6 +5,9 @@ echo "Running .bash_profile"
 if [[ "$(uname)" == "Darwin" ]]; then
     eval "$(/opt/homebrew/bin/brew shellenv)"
 
+    # nvm (node version manager)
+    export NVM_DIR="$HOME/.nvm"
+    mkdir -p "$NVM_DIR"
     [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
     [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
@@ -14,6 +17,16 @@ if [[ "$(uname)" == "Darwin" ]]; then
     # Added by LM Studio CLI (lms)
     export PATH="$PATH:/Users/matthewberthoud/.lmstudio/bin"
     # End of LM Studio CLI section
+
+    # rust
+    . "$HOME/.cargo/env"
+
+    # Added by `rbenv init` on Sat Oct 25 00:54:49 EDT 2025
+    eval "$(rbenv init - --no-rehash bash)"
+
+    # sdkman-cli from brew
+    export SDKMAN_DIR=$(brew --prefix sdkman-cli)/libexec
+    [[ -s "${SDKMAN_DIR}/bin/sdkman-init.sh" ]] && source "${SDKMAN_DIR}/bin/sdkman-init.sh"
 
 elif [[ "$(uname -s)" == "Linux" ]]; then
     eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
@@ -33,17 +46,9 @@ elif [[ "$(uname -s)" == "Linux" ]]; then
             echo "kmonad.exe already running."
         fi
     fi
+
+else
+    echo "⚠️ Operating system is not Unix-based"
 fi
 
-# nvm (node version manager)
-export NVM_DIR="$HOME/.nvm"
-mkdir -p "$NVM_DIR"
-[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
-[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
-
 source ~/.bashrc
-
-. "$HOME/.cargo/env"
-
-# Added by `rbenv init` on Sat Oct 25 00:54:49 EDT 2025
-eval "$(rbenv init - --no-rehash bash)"

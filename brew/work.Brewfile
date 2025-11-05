@@ -6,7 +6,6 @@
 # Common formulae
 [
   "awscli",
-  "gemini-cli",
   "go-task",
   "poetry",     # python package management
   "sdkman-cli", # java stuff for OMS-bridge
