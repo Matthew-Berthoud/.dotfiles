@@ -39,8 +39,8 @@ get_brew_packages() {
         echo "Saving your preference to $local_env_file..."
         # Create or overwrite the local file with the machine-specific setting.
         # Using a single '>' ensures the file is clean if this script is ever re-run.
-        echo "# Do not commit this file. It is for machine-specific settings." > "$local_env_file"
-        echo "export WORK_COMPUTER=$is_work_computer" >> "$local_env_file"
+        echo "# Do not commit this file. It is for machine-specific settings." >"$local_env_file"
+        echo "export WORK_COMPUTER=$is_work_computer" >>"$local_env_file"
 
         # Set the variable for the CURRENT session so the script can complete.
         export WORK_COMPUTER=$is_work_computer
@@ -58,7 +58,7 @@ get_brew_packages() {
 
 FILES_TO_LINK=("bash_profile" "bashrc" "vimrc" "gitconfig" "gitconfig-work")
 for FILE in "${FILES_TO_LINK[@]}"; do
-	ln -sf "$DOTFILES/$FILE" "$HOME/.$FILE"
+    ln -sf "$DOTFILES/$FILE" "$HOME/.$FILE"
 done
 echo "Sym-linked these dotfiles: ${FILES_TO_LINK[*]}"
 
@@ -87,7 +87,7 @@ if command -v pyenv >/dev/null 2>&1; then
 fi
 
 # Pull in submodules of this repo (eg. nvim)
-cd "$DOTFILES" && git submodule init && git pull --recurse-submodule && cd - > /dev/null 2>&1
+cd "$DOTFILES" && git submodule init && git pull --recurse-submodule && cd - >/dev/null 2>&1
 
 # install rust
 command -v rustc >/dev/null 2>&1 || curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh

@@ -42,8 +42,8 @@ eval "$(pyenv init -)"
 
 # On my Mac only
 if [ "$(uname)" == "Darwin" ]; then
-    alias rmdirr="rm_DS_Store_and_dir"
-    alias ddev="bash $DOTFILES/docker-dev/launch.sh"
+  alias rmdirr="rm_DS_Store_and_dir"
+  alias ddev="bash $DOTFILES/docker-dev/launch.sh"
 fi
 
 # Load machine-specific settings if they exist
@@ -57,4 +57,3 @@ export IGNOREEOF=10
 # Added by LM Studio CLI (lms)
 export PATH="$PATH:/Users/matthewberthoud/.lmstudio/bin"
 # End of LM Studio CLI section
-
