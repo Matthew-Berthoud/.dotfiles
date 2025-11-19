@@ -42,13 +42,13 @@ eval "$(pyenv init -)"
 
 # On my Mac only
 if [ "$(uname)" == "Darwin" ]; then
-  alias rmdirr="rm_DS_Store_and_dir"
-  alias ddev="bash $DOTFILES/docker-dev/launch.sh"
+    alias rmdirr="rm_DS_Store_and_dir"
+    alias ddev="bash $DOTFILES/docker-dev/launch.sh"
 fi
 
 # Load machine-specific settings if they exist
 if [[ -f ~/.bash_profile.local ]]; then
-  source ~/.bash_profile.local
+    source ~/.bash_profile.local
 fi
 
 export IGNOREEOF=10
