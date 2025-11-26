@@ -76,10 +76,10 @@ daily() {
         echo "Found previous note: $(basename "$source_note"). Carrying over tasks..."
         # If a source note exists, copy everything from the start of the
         # file up to and including the '# DONE' line to the new note.
-        sed '/^# DONE/q' "$source_note" >"$todays_note_file"
+        sed '/^# Done/q' "$source_note" >"$todays_note_file"
     else
         echo "No previous notes found. Creating a fresh daily note."
-        echo -e "# TODO\n\n# DONE" >"$todays_note_file"
+        echo -e "# To Do\n\n# In Progress\n\n# In Review\n\n# Done" >"$todays_note_file"
     fi
 
     nvim "$todays_note_file"
