@@ -4,6 +4,7 @@
   "curl",
   "docker",
   "docker-compose",
+  "fzf",
   "gh",
   "git",
   "git-lfs",
