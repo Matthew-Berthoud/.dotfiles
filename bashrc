@@ -30,6 +30,7 @@ alias dotgit="dotgit"
 alias nav="navigate_to_port"
 alias treedme="tree -a --gitignore --dirsfirst -I ".git/" --noreport | pbcopy"
 alias cssbattle="pbpaste | python $SCRIPTS/cssbattle_condenser.py | pbcopy"
+alias love="/Applications/love.app/Contents/MacOS/love"
 
 alias v="nvim"
 alias vi="nvim"
