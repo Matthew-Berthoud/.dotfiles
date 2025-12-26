@@ -1,0 +1,52 @@
+brew "awscli"
+brew "bash"
+brew "curl"
+brew "docker"
+brew "docker-compose"
+brew "fzf"
+brew "gh"
+brew "git"
+brew "git-lfs"
+brew "go-task"
+brew "golang"
+brew "imagemagick"
+brew "ko"                             # SAMBA
+brew "kubectl"
+brew "libxml2"
+brew "mas"                            # Mac App Store
+brew "minikube"
+brew "neovim"
+brew "nvm"
+brew "pandoc"
+brew "php"                            # GDSC
+brew "poetry"                         # python package management
+brew "pyenv"
+brew "rbenv"
+brew "ripgrep"
+brew "rustup"
+brew "sdkman-cli"                     # java stuff for OMS-bridge
+brew "tmux"
+brew "tree"
+brew "unzip"
+brew "uv"
+brew "wget"
+cask "docker-desktop"
+cask "eqmac"
+cask "font-jetbrains-mono-nerd-font"  
+cask "ghostty"
+cask "google-chrome"
+cask "karabiner-elements"
+cask "lm-studio"
+cask "logi-options+"                  # mouse and keyboard settings for logitech
+cask "microsoft-excel"
+cask "obs"
+cask "ollama-app"
+cask "postman"
+cask "prismlauncher"                  # prism minecraft launcher
+cask "slack"
+cask "spotify"
+cask "tailscale-app"
+cask "unnaturalscrollwheels"
+cask "zotero"                         # research
+cask "zulu"                           # java sdk for minecraft
+tap "sdkman/tap"                      # java stuff for OMS-bridge
