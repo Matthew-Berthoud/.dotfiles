@@ -37,7 +37,6 @@ cask "ghostty"
 cask "google-chrome"
 cask "karabiner-elements"
 cask "lm-studio"
-cask "logi-options+"                  # mouse and keyboard settings for logitech
 cask "microsoft-excel"
 cask "obs"
 cask "ollama-app"
