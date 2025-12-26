@@ -39,6 +39,7 @@ if OS.mac?
     "ghostty",
     "google-chrome",
     "karabiner-elements",
+    "logi-options+",             # mouse and keyboard settings for logitech
     "microsoft-excel",
     "prismlauncher",             # prism minecraft launcher
     "spotify",
