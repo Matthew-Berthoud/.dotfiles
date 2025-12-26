@@ -47,5 +47,5 @@ cask "spotify"
 cask "tailscale-app"
 cask "unnaturalscrollwheels"
 cask "zotero"                         # research
-cask "zulu"                           # java sdk for minecraft
+cask "zulu@8"                        # java sdk for minecraft
 tap "sdkman/tap"                      # java stuff for OMS-bridge
