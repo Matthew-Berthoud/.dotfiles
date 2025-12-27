@@ -1,96 +1,89 @@
 {
-  "profiles": [
-    {
-      "complex_modifications": {
-        "rules": [
-          {
-            "description": "Caps→Esc/Ctrl if held",
-            "manipulators": [
-              {
-                "from": {
-                  "key_code": "caps_lock",
-                  "modifiers": { "optional": ["any"] }
+    "profiles": [
+        {
+            "complex_modifications": {
+                "rules": [
+                    {
+                        "description": "Caps→Esc/Ctrl if held",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "caps_lock",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [{ "key_code": "left_control" }],
+                                "to_if_alone": [{ "key_code": "escape" }],
+                                "type": "basic"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "name": "Default profile",
+            "virtual_hid_keyboard": { "keyboard_type_v2": "ansi" }
+        },
+        {
+            "complex_modifications": {
+                "rules": [
+                    {
+                        "description": "Caps→Esc/Ctrl if held",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "caps_lock",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [{ "key_code": "left_control" }],
+                                "to_if_alone": [{ "key_code": "escape" }],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "disable spotlight search",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "spacebar",
+                                    "modifiers": {
+                                        "mandatory": ["left_command"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [{ "key_code": "spacebar" }],
+                                "type": "basic"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "fn_function_keys": [
+                {
+                    "from": { "key_code": "f1" },
+                    "to": [{ "key_code": "display_brightness_decrement" }]
                 },
-                "to": [{ "key_code": "left_control" }],
-                "to_if_alone": [{ "key_code": "escape" }],
-                "type": "basic"
-              }
-            ]
-          }
-        ]
-      },
-      "name": "Default profile",
-      "selected": true,
-      "virtual_hid_keyboard": { "keyboard_type_v2": "ansi" }
-    },
-    {
-      "complex_modifications": {
-        "rules": [
-          {
-            "description": "disable spotlight search",
-            "manipulators": [
-              {
-                "from": {
-                  "key_code": "spacebar",
-                  "modifiers": {
-                    "mandatory": ["left_command"],
-                    "optional": ["any"]
-                  }
+                {
+                    "from": { "key_code": "f2" },
+                    "to": [{ "key_code": "display_brightness_increment" }]
                 },
-                "to": [{ "key_code": "spacebar" }],
-                "type": "basic"
-              }
-            ]
-          }
-        ]
-      },
-      "fn_function_keys": [
-        {
-          "from": { "key_code": "f1" },
-          "to": [{ "key_code": "f1" }]
-        },
-        {
-          "from": { "key_code": "f2" },
-          "to": [{ "key_code": "f2" }]
-        },
-        {
-          "from": { "key_code": "f3" },
-          "to": [{ "key_code": "f3" }]
-        },
-        {
-          "from": { "key_code": "f4" },
-          "to": [{ "key_code": "f4" }]
-        },
-        {
-          "from": { "key_code": "f5" },
-          "to": [{ "key_code": "f5" }]
-        },
-        {
-          "from": { "key_code": "f7" },
-          "to": [{ "key_code": "f7" }]
-        },
-        {
-          "from": { "key_code": "f9" },
-          "to": [{ "key_code": "f9" }]
-        },
-        {
-          "from": { "key_code": "f10" },
-          "to": [{ "key_code": "f10" }]
+                {
+                    "from": { "key_code": "f3" },
+                    "to": [{ "key_code": "mission_control" }]
+                }
+            ],
+            "name": "Minecraft",
+            "selected": true,
+            "simple_modifications": [
+                {
+                    "from": { "key_code": "left_control" },
+                    "to": [{ "key_code": "left_command" }]
+                },
+                {
+                    "from": { "key_code": "left_option" },
+                    "to": [{ "key_code": "vk_none" }]
+                }
+            ],
+            "virtual_hid_keyboard": { "keyboard_type_v2": "ansi" }
         }
-      ],
-      "name": "Minecraft",
-      "simple_modifications": [
-        {
-          "from": { "key_code": "left_control" },
-          "to": [{ "key_code": "left_command" }]
-        },
-        {
-          "from": { "key_code": "left_option" },
-          "to": [{ "key_code": "vk_none" }]
-        }
-      ],
-      "virtual_hid_keyboard": { "keyboard_type_v2": "ansi" }
-    }
-  ]
+    ]
 }
-
